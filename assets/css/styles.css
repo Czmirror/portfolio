@@ -26,7 +26,7 @@
 }
 
 .hero-background {
-    background: url('/assets/image/mainvisual.png') center center;
+    background: url('../image/mainvisual.png') center center;
     background-size: cover;
 }
 
