@@ -1,10 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cz_mirror's Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-$END$
+<!-- Navigation Menu -->
+<nav class="navbar is-transparent">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+            <img src="/assets/image/logo_Cz_mirror.png" alt="Logo">
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="#">Home</a>
+            <a class="navbar-item" href="#">About</a>
+            <a class="navbar-item" href="#">Portfolio</a>
+            <a class="navbar-item" href="#">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Section Above Hero -->
+<section class="section section-above-hero">
+    <div class="container">
+        <h2 class="title has-text-centered">Cz_mirror's Portfolio</h2>
+        <p class="has-text-centered">Web開発者、ゲーム開発者のCz_mirrorのポートフォリオサイトです</p>
+    </div>
+</section>
+
+<!-- Page Title with Background Image -->
+<section class="hero is-fullheight-with-navbar hero-background">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title outlined-text">
+                Welcome to Cz_mirror's Portfolio
+            </h1>
+        </div>
+    </div>
+</section>
+
+<!-- Section Below Hero -->
+<section class="section section-below-hero">
+    <div class="container">
+        <h2 class="title has-text-centered">About Me</h2>
+        <div class="columns is-vcentered">
+            <div class="column is-one-third has-text-centered">
+                <figure class="image is-128x128 is-inline-block">
+                    <img class="profile-icon" src="/assets/image/icon_cz_mirror.png" alt="Profile Icon">
+                </figure>
+            </div>
+            <div class="column">
+                <div class="content">
+                    <p>Cz_mirror / Kazushige Mori(森 一茂)</p>
+                    <p><strong>職業:</strong> Web系エンジニア、ゲーム開発エンジニア</p>
+                    <p><strong>Profession:</strong> Web Engineer, Game Development Engineer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Profile Link Skill section -->
+<section class="section section-below-hero">
+    <div class="container">
+        <div class="columns">
+            <!-- 自己紹介・経歴 -->
+            <div class="column">
+                <h3 class="title is-4">自己紹介・経歴</h3>
+                <ul>
+                    <li>専門学校の紹介で新聞社でWebのオペレーターの仕事をしながら、独学でPHP・MySQLを習得</li>
+                    <li>社内グループウェアの運用保守に携わる会社で、PHPによる社内システムのリファクタリングなどを担当。</li>
+                    <li>Web製作会社のWeb開発部門でPHPを中心とした受託系CMS案件に多く携わり、社外・社内でコミュニケーションをとりながら要件定義、プログラミングなどの業務を担当。</li>
+                    <li>広告代理店で、社内案件を中心としたPHP・Laravel開発を中心としたエンジニア業務を担当。</li>
+                    <li>2024年8月よりUnityゲーム開発者として勤務する予定です。</li>
+                </ul>
+            </div>
+
+            <!-- リンク -->
+            <div class="column">
+                <h3 class="title is-4">リンク</h3>
+                <ul>
+                    <li><a href="https://unityroom.com/users/1xeulc2hnzogrj5483pm">Unityroom</a></li>
+                    <li><a href="https://github.com/Czmiror">Github</a></li>
+                    <li><a href="https://soundcloud.com/kazushige-mori">SoundCloud</a></li>
+                    <li><a href="https://zenn.dev/cz_mirror">Zenn</a></li>
+                    <li><a href="https://note.com/cz_mirror">note</a></li>
+                    <li><a href="https://cz-mirror.hatenablog.com">はてなブログ</a></li>
+                    <li><a href="https://twitter.com/Cz_mirror">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/kazushige.mori">Facebook</a></li>
+                    <li><a href="https://www.wantedly.com/id/Cz_mirror">Wantedly</a></li>
+                </ul>
+            </div>
+
+            <!-- スキル -->
+            <div class="column">
+                <h3 class="title is-4">スキル</h3>
+                <p><strong>Web開発系スキル</strong></p>
+                <ul class="custom-list">
+                    <li class="skill" data-detail="主にLaravelを用いた開発をしていて、過去に会員系サイトの構築などを行いました">PHP、Laravel</li>
+                    <li class="skill" data-detail="Web開発に必要なSQLの知識は概ね把握しています">MySQL</li>
+                    <li class="skill" data-detail="Laravelの開発用のローカル環境構築で主に使用しています">Docker</li>
+                    <li class="skill" data-detail="チーム開発で必要なコマンドなどは概ね把握しています">Git</li>
+                    <li class="skill" data-detail="SSHでサーバーへのアクセス、Laravelのセットアップ、シェルスクリプトの実装などを行うことができます">Linux</li>
+                </ul>
+                <p><strong>Web制作経験スキル</strong></p>
+                <ul class="custom-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                </ul>
+                <p><strong>DCCツール</strong></p>
+                <ul class="custom-list">
+                    <li class="skill" data-detail="独学でシューティングゲーム、アクションゲームなどを開発できます。">Unity</li>
+                    <li class="skill" data-detail="AffinityDesignerなどで印刷物、ゲーム用素材を作成できます">Affinity</li>
+                    <li class="skill" data-detail="テンプレートを用いて、ゲーム用DTMなどを作成できます">Medly</li>
+                    <li class="skill" data-detail="Photoshop、Illustratorを過去に使用していましたので、基本的なフォトレタッチなどの加工が可能です">Adobe</li>
+                    <li class="skill" data-detail="ゲーム用素材ドット絵の作成が可能です">Aseprite</li>
+                    <li class="skill" data-detail="一般的な操作で簡単な3D素材の作成が可能です">Blender</li>
+                    <li class="skill" data-detail="UnityゲームのPV作成で使用しました、字幕の追加、エフェクトなどの動画編集が可能です">DaVinci Resolve</li>
+                    <li class="skill" data-detail="Unityゲームのキャラクター作成で使用しました">VRoid</li>
+                </ul>
+                <p><strong>Officeツール</strong></p>
+                <ul class="custom-list">
+                    <li class="skill" data-detail="Word、Excel、Powerpointなど一般的なオフィスツールを使いこなすことができます。">Microsoft Office</li>
+                    <li>Pages</li>
+                    <li>Numbers</li>
+                    <li>Keynote</li>
+                </ul>
+                <p><strong>IDE</strong></p>
+                <ul class="custom-list">
+                    <li>JetBrains</li>
+                    <li>VSCode</li>
+                </ul>
+                <p><strong>コミュニケーション</strong></p>
+                <ul class="custom-list">
+                    <li>Slack</li>
+                    <li>Discord</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Portfolio Section -->
+<section class="section portfolio">
+    <div class="container">
+        <h2 class="title">Portfolio</h2>
+
+        <!-- RAYSER Game Section -->
+        <div class="box">
+            <h3 class="title is-3 has-text-centered">RAYSER</h3>
+
+            <!-- Game Visual and About -->
+            <div class="columns">
+                <div class="column ">
+                    <figure class="image is-4by3">
+                        <img src="/mnt/data/image.png" alt="RAYSER Game Visual">
+                    </figure>
+                </div>
+                <div class="column ">
+                    <h4 class="title is-4">About</h4>
+                    <p class="about-content">
+                        80~90年代頃の懐かしい雰囲気のSTGを再現したく開発中のシューティングゲームです。スコアでサブウェポンを購入して自機を強化したりレーザーで敵を殲滅しながら、複数視点のステージを進めていきます。<br>
+                        サブウェポンはバルカン、マルチウェイ、ホーミング、スパイラルの4種類があり、またボムを使うことでピンチを脱却することができます。
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- YouTube Video -->
+            <div class="columns is-marginless">
+                <div class="column">
+                    <h4 class="title is-4">Gameplay Video</h4>
+                    <div class="video-container">
+                        <iframe width="100%" height="615" src="https://www.youtube.com/embed/-Avci8iVlFw" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SoundCloud Player -->
+            <div class="columns is-marginless">
+                <div class="column">
+                    <h4 class="title is-4">SoundCloud Player</h4>
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1228388191&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif; font-weight: 100;">
+                        <a href="https://soundcloud.com/kazushige-mori" title="Cz_mirror(Kazushige Mori)" target="_blank" style="color: #cccccc; text-decoration: none;">Cz_mirror(Kazushige Mori)</a> ·
+                        <a href="https://soundcloud.com/kazushige-mori/rayser-final-conflict" title="RAYSER Final Conflict" target="_blank" style="color: #cccccc; text-decoration: none;">RAYSER Final Conflict</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs is-boxed is-centered">
+            <ul>
+                <li class="is-active"><a>Game</a></li>
+                <li><a>DTM</a></li>
+                <li><a>Web</a></li>
+            </ul>
+        </div>
+        <div class="columns is-multiline">
+            <!-- Portfolio Item 1 -->
+            <div class="column is-one-third">
+                <figure class="image is-4by3">
+                    <img src="portfolio-item1.jpg" alt="Portfolio Item 1">
+                </figure>
+                <p class="has-text-centered">Project Title 1</p>
+            </div>
+            <!-- Portfolio Item 2 -->
+            <div class="column is-one-third">
+                <figure class="image is-4by3">
+                    <img src="portfolio-item2.jpg" alt="Portfolio Item 2">
+                </figure>
+                <p class="has-text-centered">Project Title 2</p>
+            </div>
+            <!-- Portfolio Item 3 -->
+            <div class="column is-one-third">
+                <figure class="image is-4by3">
+                    <img src="portfolio-item3.jpg" alt="Portfolio Item 3">
+                </figure>
+                <p class="has-text-centered">Project Title 3</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>Portfolio</strong> by <a href="https://yourwebsite.com">Cz_mirror</a>. The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+        </p>
+    </div>
+</footer>
 </body>
 </html>
