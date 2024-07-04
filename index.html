@@ -9,24 +9,24 @@
 </head>
 <body>
 <!-- Navigation Menu -->
-<nav class="navbar is-transparent">
+<nav class="navbar is-transparent is-fixed-top">
     <div class="navbar-brand">
-        <a class="navbar-item" href="#">
+        <a class="navbar-item" href="#home">
             <img src="/assets/image/logo_Cz_mirror.png" alt="Logo">
         </a>
     </div>
     <div class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="#">Home</a>
-            <a class="navbar-item" href="#">About</a>
-            <a class="navbar-item" href="#">Portfolio</a>
-            <a class="navbar-item" href="#">Contact</a>
+            <a class="navbar-item" href="#home">Home</a>
+            <a class="navbar-item" href="#about">About</a>
+            <a class="navbar-item" href="#portfolio">Portfolio</a>
+            <a class="navbar-item" href="#contact">Contact</a>
         </div>
     </div>
 </nav>
 
 <!-- Section Above Hero -->
-<section class="section section-above-hero">
+<section id="home" class="section section-above-hero slide-in">
     <div class="container">
         <h2 class="title has-text-centered">Cz_mirror's Portfolio</h2>
         <p class="has-text-centered">Web開発者、ゲーム開発者のCz_mirrorのポートフォリオサイトです</p>
@@ -34,7 +34,7 @@
 </section>
 
 <!-- Page Title with Background Image -->
-<section class="hero is-fullheight-with-navbar hero-background">
+<section class="hero is-fullheight-with-navbar hero-background slide-in">
     <div class="hero-body">
         <div class="container has-text-centered">
             <h1 class="title outlined-text">
@@ -45,7 +45,7 @@
 </section>
 
 <!-- Section Below Hero -->
-<section class="section section-below-hero">
+<section id="about" class="section section-below-hero slide-in">
     <div class="container">
         <h2 class="title has-text-centered">About Me</h2>
         <div class="columns is-vcentered">
@@ -66,7 +66,7 @@
 </section>
 
 <!-- Profile Link Skill section -->
-<section class="section section-below-hero">
+<section class="section section-below-hero slide-in">
     <div class="container">
         <div class="columns">
             <!-- 自己紹介・経歴 -->
@@ -127,7 +127,8 @@
                 </ul>
                 <p><strong>Officeツール</strong></p>
                 <ul class="custom-list">
-                    <li class="skill" data-detail="Word、Excel、Powerpointなど一般的なオフィスツールを使いこなすことができます。">Microsoft Office</li>
+                    <li class="skill" data-detail="Word、Excel、Powerpointなど一般的なオフィスツールを使いこなすことができます。">Microsoft Office
+                    </li>
                     <li>Pages</li>
                     <li>Numbers</li>
                     <li>Keynote</li>
@@ -147,12 +148,8 @@
     </div>
 </section>
 
-
-
-
-
 <!-- Portfolio Section -->
-<section class="section portfolio">
+<section id="portfolio" class="section portfolio slide-in">
     <div class="container">
         <h2 class="title">Portfolio</h2>
 
@@ -162,17 +159,31 @@
 
             <!-- Game Visual and About -->
             <div class="columns">
-                <div class="column ">
-                    <figure class="image is-4by3">
-                        <img src="/mnt/data/image.png" alt="RAYSER Game Visual">
-                    </figure>
+                <div class="column">
+                    <div class="img-container">
+                        <img src="/assets/image/portfolio/rayser/game_visual.png" alt="RAYSER Game Visual">
+                    </div>
                 </div>
-                <div class="column ">
-                    <h4 class="title is-4">About</h4>
+                <div class="column">
+                    <h4 class="title is-4 mb-2">About</h4>
                     <p class="about-content">
-                        80~90年代頃の懐かしい雰囲気のSTGを再現したく開発中のシューティングゲームです。スコアでサブウェポンを購入して自機を強化したりレーザーで敵を殲滅しながら、複数視点のステージを進めていきます。<br>
-                        サブウェポンはバルカン、マルチウェイ、ホーミング、スパイラルの4種類があり、またボムを使うことでピンチを脱却することができます。
+                        80~90年代頃の懐かしい雰囲気のSTGを再現を目標にUnityで開発中のシューティングゲームです。スコアでサブウェポンを購入して自機を強化したりレーザーで敵を殲滅しながら、複数視点のステージを進めていきます。<br>
+                        サブウェポンはバルカン、マルチウェイ、ホーミング、スパイラルの4種類があり、またボムを使うことでピンチを脱却することができます。<br>
+                        東京ゲームダンジョン2,4,5,横浜ゲームダンジョンで出展いたしました。今後も可能な限り出展をできればと思います。
                     </p>
+                    <h4 class="title is-4 mt-5 mb-2">Platform</h4>
+                    <p class="about-content">
+                        Steamでのリリースを予定しています。
+                    </p>
+                    <h4 class="title is-4 mt-5 mb-2">Demo</h4>
+                    <p class="about-content">
+                        ベースとなった過去にリリースしたバージョンをUnityroomでプレイ可能です。
+                    </p>
+                    <ul>
+                        <li><a href="https://unityroom.com/games/rayser_v3">RAYSER(V3)</a></li>
+                        <li><a href="https://unityroom.com/games/rayser_v2">RAYSER(V2)</a></li>
+                        <li><a href="https://unityroom.com/games/rayser">RAYSER(V1)</a></li>
+                    </ul>
                 </div>
             </div>
 
@@ -182,7 +193,8 @@
                 <div class="column">
                     <h4 class="title is-4">Gameplay Video</h4>
                     <div class="video-container">
-                        <iframe width="100%" height="615" src="https://www.youtube.com/embed/-Avci8iVlFw" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="615" src="https://www.youtube.com/embed/-Avci8iVlFw"
+                                frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -191,62 +203,272 @@
             <div class="columns is-marginless">
                 <div class="column">
                     <h4 class="title is-4">SoundCloud Player</h4>
-                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1228388191&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-                    <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif; font-weight: 100;">
-                        <a href="https://soundcloud.com/kazushige-mori" title="Cz_mirror(Kazushige Mori)" target="_blank" style="color: #cccccc; text-decoration: none;">Cz_mirror(Kazushige Mori)</a> ·
-                        <a href="https://soundcloud.com/kazushige-mori/rayser-final-conflict" title="RAYSER Final Conflict" target="_blank" style="color: #cccccc; text-decoration: none;">RAYSER Final Conflict</a>
-                    </div>
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1440888265&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/kazushige-mori" title="Cz_mirror(Kazushige Mori)"
+                           target="_blank" style="color: #cccccc; text-decoration: none;">Cz_mirror(Kazushige Mori)</a>
+                        · <a href="https://soundcloud.com/kazushige-mori/sets/rayser" title="RAYSER" target="_blank"
+                             style="color: #cccccc; text-decoration: none;">RAYSER</a></div>
                 </div>
             </div>
         </div>
+</section>
 
-        <div class="tabs is-boxed is-centered">
-            <ul>
-                <li class="is-active"><a>Game</a></li>
-                <li><a>DTM</a></li>
-                <li><a>Web</a></li>
-            </ul>
-        </div>
-        <div class="columns is-multiline">
-            <!-- Portfolio Item 1 -->
-            <div class="column is-one-third">
-                <figure class="image is-4by3">
-                    <img src="portfolio-item1.jpg" alt="Portfolio Item 1">
-                </figure>
-                <p class="has-text-centered">Project Title 1</p>
+<section class="section portfolio slide-in">
+    <div class="container">
+        <!-- Captulion Game Section -->
+        <div class="box">
+            <h3 class="title is-3 has-text-centered">Captulion</h3>
+
+            <!-- Game Visual and About -->
+            <div class="columns">
+                <div class="column">
+                    <div class="img-container">
+                        <img src="/assets/image/portfolio/captulion/game_visual.png"
+                             alt="Captulion Game Visual">
+                    </div>
+                </div>
+                <div class="column">
+                    <h4 class="title is-4 mb-2">About</h4>
+                    <p class="about-content">
+                        初めてUnityで開発した敵機を捕獲する縦スクロールシューティングゲームです<br>
+                        敵機は雑魚キャラからボスキャラまで全て捕獲して自分の仲間とすることができます<br>
+                        味方となった敵機は、自機を追尾して、自機と共に戦ったり自機を守る盾にもなります
+                    </p>
+                    <h4 class="title is-4 mt-5 mb-2">Demo</h4>
+                    <p class="about-content">
+                        以前はiOS版をリリースしていましたが、現在はクローズしています。現在はUnityroomでプレイ可能です。
+                    </p>
+                    <ul>
+                        <li><a href="https://unityroom.com/games/captulion">Captulion</a></li>
+                    </ul>
+                </div>
             </div>
-            <!-- Portfolio Item 2 -->
-            <div class="column is-one-third">
-                <figure class="image is-4by3">
-                    <img src="portfolio-item2.jpg" alt="Portfolio Item 2">
-                </figure>
-                <p class="has-text-centered">Project Title 2</p>
+
+            <!-- YouTube Video -->
+            <div class="columns is-marginless">
+                <div class="column">
+                    <h4 class="title is-4">Gameplay Video</h4>
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/ljnLOl-vXHg?si=78nPh7nx-JZdBZ_q"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-            <!-- Portfolio Item 3 -->
-            <div class="column is-one-third">
-                <figure class="image is-4by3">
-                    <img src="portfolio-item3.jpg" alt="Portfolio Item 3">
-                </figure>
-                <p class="has-text-centered">Project Title 3</p>
+
+            <!-- SoundCloud Player -->
+            <div class="columns is-marginless">
+                <div class="column">
+                    <h4 class="title is-4">SoundCloud Player</h4>
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1451072428&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/kazushige-mori" title="Cz_mirror(Kazushige Mori)"
+                           target="_blank" style="color: #cccccc; text-decoration: none;">Cz_mirror(Kazushige Mori)</a>
+                        · <a href="https://soundcloud.com/kazushige-mori/sets/captulion" title="Captulion"
+                             target="_blank" style="color: #cccccc; text-decoration: none;">Captulion</a></div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
+<section class="section portfolio slide-in">
+    <div class="container">
+        <!-- Plana Game Section -->
+        <div class="box">
+            <h3 class="title is-3 has-text-centered">ぷらなりんかねーしょん！</h3>
 
+            <!-- Game Visual and About -->
+            <div class="columns">
+                <div class="column">
+                    <div class="img-container">
+                        <img src="/assets/image/portfolio/planareincarnation/game_visual.png"
+                             alt="ぷらなりんかねーしょん！ Game Visual">
+                    </div>
+                </div>
+                <div class="column">
+                    <h4 class="title is-4 mb-2">About</h4>
+                    <p class="about-content">
+                        自作素材でアクションゲームを作るという目標にUnityで実装したゲームです。
+                    </p>
+                    <h4 class="title is-4 mt-5 mb-2">Demo</h4>
+                    <p class="about-content">
+                        Unityroomでプレイ可能です。
+                    </p>
+                    <ul>
+                        <li><a href="https://unityroom.com/games/planareincarnation">ぷらなりんかねーしょん！</a></li>
+                    </ul>
+                </div>
+            </div>
 
+            <!-- SoundCloud Player -->
+            <div class="columns is-marginless">
+                <div class="column">
+                    <h4 class="title is-4">SoundCloud Player</h4>
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1321121503&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/kazushige-mori" title="Cz_mirror(Kazushige Mori)"
+                           target="_blank" style="color: #cccccc; text-decoration: none;">Cz_mirror(Kazushige Mori)</a>
+                        · <a href="https://soundcloud.com/kazushige-mori/sets/planareincarnation"
+                             title="ぷらなりんかねーしょん！ PlanaReincarnation" target="_blank"
+                             style="color: #cccccc; text-decoration: none;">ぷらなりんかねーしょん！ PlanaReincarnation</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<section class="section portfolio slide-in">
+    <div class="container">
+        <!-- TurboSoba Game Section -->
+        <div class="box">
+            <h3 class="title is-3 has-text-centered">TurboSoba</h3>
 
+            <!-- Game Visual and About -->
+            <div class="columns">
+                <div class="column">
+                    <div class="img-container">
+                        <img src="/assets/image/portfolio/turbosoba/game_visual.jpg"
+                             alt="TurboSoba Game Visual">
+                    </div>
+                </div>
+                <div class="column">
+                    <h4 class="title is-4 mb-2">About</h4>
+                    <p class="about-content">
+                        特にこれといった長所もなく平凡な蕎麦屋を経営している店主「山田種雄」、バイクで高速走行ができる特性を持ち、超高速で出前ができるスキルを活かし、今日も出前を続ける。<br>
+                        Unityで開発した蕎麦出前ゲームです。<br>
+                        今後Storyモードを実装していき、主人公山田種雄の繰り広げるドタバタ活劇を作っていければと考えています。<br>
+                        ボス戦の実装なども予定しています。
+                    </p>
 
+                    <h4 class="title is-4 mb-2">Story</h4>
+                    <p class="about-content">
+                        21世紀中頃、自動運転なども普及してますます人類の生活は便利に進化し続けていた。ただそんな進化に完全に乗り遅れた男がいた。
+                        その名は蕎麦処を経営する山田種雄。手打ちと出前にこだわり続けて今日も熱きそばを片手に出前だ！
+                    </p>
+
+                    <h4 class="title is-4 mb-2">Characters</h4>
+                    <p class="about-content">
+                        山田種雄<br>
+                        TurboSoba主人公。<br>
+                        呑気町（のんきちょう）の一角で蕎麦処 今一（いまいち）を経営している55歳。世間一般が自動運転を取り入れている中、未だに自前で配達を続けている。一見パッとしないおじさんだが、バイクテクニックについては眼を見張るものがある。体もやけに丈夫で、車と正面衝突しても、ほぼ無傷。<br>
+                        配達完了時は少しイラっとするドヤ顔でおまちーといってくる。<br>
+                        配達に失敗すると全く嬉しくないサービスや言い訳を羅列する。（バリエーションは無駄に豊富）<br>
+                        長所…なし<br>
+                        短所…気が弱いわりに変なところで勢いにのり、大問題を起こす。（ただし本人に自覚はない）<br>
+                        特性…バイクの運転・加速テクニック（無自覚）、交通事故を起こしても無傷でいられるほどの強運。（運もあるが、体自体もやけに丈夫なようである。）<br>
+                        ー愛用のバイク<br>
+                        学生時代に武にバイクを試乗させてもらった時に、山田種雄自身も無自覚だったバイクの特性で、ターボ走行をし瞬く間に視界から消えていった。<br>
+                        あまりの出来事に武は呆気にとられていたが、種雄は何をしたのかまるでわかっておらず、これなら学校に遅刻しないかもと呑気に考えバイトしてスーパーカブを購入することになった。<br>
+                        <br>
+                        ー蕎麦屋になった経緯<br>
+                        大学時代バイクを乗り回していて、空腹で行き倒れになったときに、たまたま行き倒れた場所の近くの老夫婦の経営するお蕎麦屋さんに蕎麦を振舞ってもらいその味に感動して以来、蕎麦を打つようになった。そして３０年ほどたった今もスーパーカブに乗って蕎麦の出前を続けている。蕎麦の味としては、いまいちパンチが効いておらずグルメサイトで2.4くらい。<br>
+                        <br>
+                        <br>
+                        山田花代<br>
+                        種雄の妻。40歳。若い頃はなかなかの美人で種雄を尻に敷いている。<br>
+                        実は元レディース、バイクには自信があったが、たまたま配達をしていた種雄に一方的にスピード勝負を挑み、種雄に追いつけないまま負けてしまう。その後種雄に押しかける形で結婚する。（種雄は未だに花代がなぜ求婚してきたのわからないままである）
+                    </p>
+
+                    <h4 class="title is-4 mt-5 mb-2">Demo</h4>
+                    <p class="about-content">
+                        Unityroomでプレイ可能です。
+                    </p>
+                    <ul>
+                        <li><a href="https://unityroom.com/games/turbosoba_v3">TurboSoba(V3)</a></li>
+                        <li><a href="https://unityroom.com/games/turbosoba_v2">TurboSoba(V2.7)</a></li>
+                        <li><a href="https://unityroom.com/games/cz_mirror_turbosoba">TurboSoba(V1)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SoundCloud Player -->
+            <div class="columns is-marginless">
+                <div class="column">
+                    <h4 class="title is-4">SoundCloud Player</h4>
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1845850113&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <div
+                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                        <a href="https://soundcloud.com/kazushige-mori" title="Cz_mirror(Kazushige Mori)"
+                           target="_blank" style="color: #cccccc; text-decoration: none;">Cz_mirror(Kazushige Mori)</a>
+                        · <a href="https://soundcloud.com/kazushige-mori/sets/turbosoba" title="TurboSoba"
+                             target="_blank" style="color: #cccccc; text-decoration: none;">TurboSoba</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--<section id="other_portfolio" class="section portfolio slide-in">-->
+<!--    <div class="container">-->
+<!--        <div class="box">-->
+<!--            <h3 class="title is-3 has-text-centered">Others</h3>-->
+<!--            <div class="tabs is-boxed is-centered">-->
+<!--                <ul>-->
+<!--                    <li class="is-active"><a>Game</a></li>-->
+<!--                    <li><a>DTM</a></li>-->
+<!--                    <li><a>Web</a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--            <div class="columns is-multiline">-->
+<!--                &lt;!&ndash; Portfolio Item 1 &ndash;&gt;-->
+<!--                <div class="column is-one-third">-->
+<!--                    <figure class="image is-4by3">-->
+<!--                        <img src="portfolio-item1.jpg" alt="Portfolio Item 1">-->
+<!--                    </figure>-->
+<!--                    <p class="has-text-centered">Project Title 1</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Portfolio Item 2 &ndash;&gt;-->
+<!--                <div class="column is-one-third">-->
+<!--                    <figure class="image is-4by3">-->
+<!--                        <img src="portfolio-item2.jpg" alt="Portfolio Item 2">-->
+<!--                    </figure>-->
+<!--                    <p class="has-text-centered">Project Title 2</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Portfolio Item 3 &ndash;&gt;-->
+<!--                <div class="column is-one-third">-->
+<!--                    <figure class="image is-4by3">-->
+<!--                        <img src="portfolio-item3.jpg" alt="Portfolio Item 3">-->
+<!--                    </figure>-->
+<!--                    <p class="has-text-centered">Project Title 3</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<section id="contact" class="hero is-fullheight-with-navbar slide-in">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h2 class="title has-text-centered">Contact</h2>
+
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSftdSsrkjqLkJ-itM8G9kUd8GJ26-VxOkv1nnKDEnqqBU7T-A/viewform?embedded=true"
+                width="640" height="741" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…
+            </iframe>
+        </div>
+    </div>
+</section>
 
 <!-- Footer -->
 <footer class="footer">
     <div class="content has-text-centered">
         <p>
-            <strong>Portfolio</strong> by <a href="https://yourwebsite.com">Cz_mirror</a>. The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            <strong>Portfolio</strong> by Cz_mirror. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
         </p>
     </div>
 </footer>
+<script src="/assets/js/animations.js"></script>
 </body>
 </html>

@@ -1,3 +1,26 @@
+.navbar.is-fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影を追加 */
+}
+
+.section {
+    padding-top: 5rem; /* 適切な余白を追加 */
+}
+
+#home,
+#about,
+#portfolio,
+#contact {
+    scroll-margin-top: 3rem; /* ナビゲーションメニューの高さ分のマージンを追加 */
+}
+
+#home {
+    margin-top: 30px;
+}
+
 .hero.is-fullheight-with-navbar {
     padding-top: 3.25rem;
 }
@@ -129,3 +152,17 @@
 .columns {
     margin-bottom: 0 !important;
 }
+
+/* スライドインの初期状態 */
+.slide-in {
+    opacity: 0;
+    transform: translateY(100px); /* 下からスライドインするための変更 */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* スライドインの表示状態 */
+.slide-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
