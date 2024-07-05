@@ -42,7 +42,6 @@
 .skill:hover::after {
     content: attr(data-detail);
     display: block;
-    background-color: #f5f5f5;
     padding: 5px;
     border: 1px solid #ccc;
     margin-top: 5px;
