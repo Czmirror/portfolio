@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const slideInElements = document.querySelectorAll('.slide-in');
+    const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
     function checkSlideIn() {
         slideInElements.forEach(element => {
@@ -26,4 +27,15 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+
+    // Toggle the navbar menu on mobile
+    if (navbarBurgers.length > 0) {
+        navbarBurgers.forEach(function (el) {
+            el.addEventListener('click', function () {
+                const target = document.getElementById(el.dataset.target);
+                el.classList.toggle('is-active');
+                target.classList.toggle('is-active');
+            });
+        });
+    }
 });
