@@ -11,18 +11,26 @@ jobs:
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3 # 最新バージョンに更新
 
             - name: Set up Node.js
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v3 # 最新バージョンに更新
               with:
-                  node-version: '14'
+                  node-version: '16' # 推奨されるバージョンに更新
 
             - name: Install dependencies
               run: npm install
 
             - name: Build project
               run: npm run build
+              env:
+                  VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+                  VITE_AUTH_DOMAIN: ${{ secrets.VITE_AUTH_DOMAIN }}
+                  VITE_PROJECT_ID: ${{ secrets.VITE_PROJECT_ID }}
+                  VITE_STORAGE_BUCKET: ${{ secrets.VITE_STORAGE_BUCKET }}
+                  VITE_MESSAGING_SENDER_ID: ${{ secrets.VITE_MESSAGING_SENDER_ID }}
+                  VITE_APP_ID: ${{ secrets.VITE_APP_ID }}
+                  VITE_MEASUREMENT_ID: ${{ secrets.VITE_MEASUREMENT_ID }}
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
