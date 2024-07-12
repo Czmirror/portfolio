@@ -1,9 +1,12 @@
-name: Cz_mirror Portfolio Deploy to GitHub Pages 
+name: Cz_mirror Portfolio Deploy to GitHub Pages
 
 on:
     push:
         branches:
             - main
+
+permissions:
+    contents: write
 
 jobs:
     build-deploy:
