@@ -1,4 +1,4 @@
-name: Portfolio Deploy to GitHub Pages
+name: Cz_mirror Portfolio Deploy to GitHub Pages
 
 on:
     push:
