@@ -54,8 +54,7 @@
     </div>
 </section>
 
-<h1>News Articles</h1>
-<div id="news-articles"></div>
+<div id="root"></div>
 
 <!-- Section Below Hero -->
 <section id="about" class="section section-below-hero slide-in">
@@ -128,6 +127,7 @@
                     </li>
                     <li class="skill" data-detail="フレークワークを用いてページのレイアウト調整などが可能です">CSS</li>
                     <li class="skill" data-detail="Ajaxを用いるなどウェブアプリケーションに必要な処理実装が可能です">Javascript</li>
+                    <li class="skill" data-detail="こちらのポートフォリオのWhat's newでjsonを用いてコンテンツを表示する際に使用しています">React</li>
                 </ul>
                 <p><strong>DCCツール</strong></p>
                 <ul class="custom-list">
@@ -175,8 +175,10 @@
             <!-- Game Visual and About -->
             <div class="columns">
                 <div class="column">
-                    <div class="img-container">
-                        <img src="./assets/image/portfolio/rayser/game_visual.png" alt="RAYSER Game Visual">
+                    <div class="box">
+                        <figure class="image is-1by1 bloom-effect">
+                            <img src="./assets/image/portfolio/rayser/game_visual.png" alt="RAYSER Game Visual"/>
+                        </figure>
                     </div>
                 </div>
                 <div class="column">
@@ -241,9 +243,11 @@
             <!-- Game Visual and About -->
             <div class="columns">
                 <div class="column">
-                    <div class="img-container">
-                        <img src="./assets/image/portfolio/captulion/game_visual.png"
-                             alt="Captulion Game Visual">
+                    <div class="box">
+                        <figure class="image is-1by1 bloom-effect">
+                            <img src="./assets/image/portfolio/captulion/game_visual.png"
+                                 alt="Captulion Game Visual">
+                        </figure>
                     </div>
                 </div>
                 <div class="column">
@@ -304,9 +308,11 @@
             <!-- Game Visual and About -->
             <div class="columns">
                 <div class="column">
-                    <div class="img-container">
-                        <img src="./assets/image/portfolio/planareincarnation/game_visual.png"
-                             alt="ぷらなりんかねーしょん！ Game Visual">
+                    <div class="box">
+                        <figure class="image is-1by1 bloom-effect">
+                            <img src="./assets/image/portfolio/planareincarnation/game_visual.png"
+                                 alt="ぷらなりんかねーしょん！ Game Visual">
+                        </figure>
                     </div>
                 </div>
                 <div class="column">
@@ -352,9 +358,11 @@
             <!-- Game Visual and About -->
             <div class="columns">
                 <div class="column">
-                    <div class="img-container">
-                        <img src="./assets/image/portfolio/turbosoba/game_visual.jpg"
-                             alt="TurboSoba Game Visual">
+                    <div class="box">
+                        <figure class="image is-1by1 bloom-effect">
+                            <img src="./assets/image/portfolio/turbosoba/game_visual.jpg"
+                                 alt="TurboSoba Game Visual">
+                        </figure>
                     </div>
                 </div>
                 <div class="column">
@@ -487,6 +495,6 @@
     </div>
 </footer>
 <script src="./assets/js/animations.js"></script>
-<script type="module" src="./assets/js/news.js"></script>
+<script type="module" src="./src/main.jsx"></script>
 </body>
 </html>
