@@ -3,8 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
     base: process.env.GITHUB_PAGES ? 'REPOSITORY_NAME' : './',
-    root: 'src',
-    plugins: [react({ jsxImportSource: '@emotion/react' })]
+    plugins: [react()],
     resolve: {
         alias: {
             '@': '/src',
