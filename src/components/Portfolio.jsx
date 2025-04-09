@@ -51,6 +51,7 @@ const Portfolio = () => {
                     youtubeEmbed={game.youtubeEmbed}
                     soundcloudEmbed={game.soundcloudEmbed}
                     imageSrc={game.imageSrc}
+                    screenshots={game.screenshots}
                 />
             ))}
         </div>

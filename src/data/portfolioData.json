@@ -3,59 +3,73 @@
         "id": 1,
         "sectionId": "portfolio",
         "title": "RAYSER",
-        "about": "80~90年代頃の懐かしい雰囲気のシューティングゲームを目標にUnityで開発中です。スコアでサブウェポンを購入して自機を強化したり、レーザーで敵を殲滅しながら複数視点のステージを進めていきます。サブウェポンはバルカン、マルチウェイ、ホーミング、スパイラルの4種類があり、またボムを使うことでピンチを脱却することができます。東京ゲームダンジョン2,4,5、横浜ゲームダンジョンで出展いたしました。今後も可能な限り出展できればと思います。",
+        "about": "80~90年代頃の懐かしい雰囲気のシューティングゲームを目標にUnityで開発中です。自動照準レーザーで敵機を殲滅しながら複数視点のステージを進めていく視点切り替え型の3Dシューティングゲームです。ピンチの時はボムによる緊急回避やローリング回避を駆使してください。<br>東京ゲームダンジョン2,4,5,7、横浜ゲームダンジョンで出展いたしました。今後も可能な限り出展できればと思います.",
         "platform": "Steamで2025年中のリリースを予定しています。<br><a href='https://store.steampowered.com/app/3612510/RAYSER/' target='_blank'>Steamストアページ</a>",
         "demoLinks": [
-            { "text": "RAYSER(V3)", "url": "https://unityroom.com/games/rayser_v3" },
-            { "text": "RAYSER(V2)", "url": "https://unityroom.com/games/rayser_v2" },
-            { "text": "RAYSER(V1)", "url": "https://unityroom.com/games/rayser" }
+            { "text": "RAYSER(V3) by unityroom", "url": "https://unityroom.com/games/rayser_v3" },
+            { "text": "RAYSER(V2) by unityroom", "url": "https://unityroom.com/games/rayser_v2" },
+            { "text": "RAYSER(V1) by unityroom", "url": "https://unityroom.com/games/rayser" }
         ],
-        "youtubeEmbed": "https://www.youtube.com/embed/-Avci8iVlFw",
-        "soundcloudEmbed": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1440888265&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true",
-        "imageSrc": "./assets/image/portfolio/rayser/game_visual.png"
+        "imageSrc": "./assets/image/portfolio/rayser/game_visual.png",
+        "screenshots": [
+            { "type": "video", "src": "./assets/image/portfolio/rayser/teaser.mp4" },
+            { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot1.png" },
+            { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot2.png" },
+            { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot3.png" }
+        ]
     },
     {
         "id": 2,
         "title": "No ise",
-        "about": "１週間ゲームジャムお題「ない」に投稿した、UnityのWebGLでプレイ可能なノイズを取り除くミニゲームです。Unity6から使えるようになったWebGLのモバイルブラウザ対応を実現するために開発しました。",
+        "about": "１週間ゲームジャムお題「ない」に投稿した、UnityのWebGLでプレイ可能なノイズを取り除くミニゲームです。<br>Unity6から使えるようになったWebGLのモバイルブラウザ対応の検証用に実装してみました。",
         "demoLinks": [
-            { "text": "No ise", "url": "https://unityroom.com/games/no_ise" }
+            { "text": "No ise by unityroom", "url": "https://unityroom.com/games/no_ise" }
         ],
-        "imageSrc": "./assets/image/portfolio/no_ise/game_visual.png"
+        "imageSrc": "./assets/image/portfolio/no_ise/game_visual.png",
+        "screenshots": [
+            { "type": "image", "src": "./assets/image/portfolio/no_ise/game_visual.png" }
+        ]
     },
     {
         "id": 3,
         "title": "Captulion",
-        "about": "初めてUnityで開発した、敵機を捕獲する縦スクロールシューティングゲームです。敵機は雑魚キャラからボスキャラまで全て捕獲して自分の仲間とすることができ、味方となった敵機は自機を追尾して共に戦ったり、自機を守る盾にもなります。",
+        "about": "初めてUnityで開発した、敵機を捕獲する縦スクロールシューティングゲームです。敵機は雑魚キャラからボスキャラまで全て捕獲して自分の仲間とすることができ、味方となった敵機は自機を追尾して共に戦ったり、自機を守る盾にもなります.",
         "demoLinks": [
-            { "text": "Captulion", "url": "https://unityroom.com/games/captulion" }
+            { "text": "Captulion by unityroom", "url": "https://unityroom.com/games/captulion" }
         ],
-        "youtubeEmbed": "https://www.youtube.com/embed/ljnLOl-vXHg?si=78nPh7nx-JZdBZ_q",
-        "soundcloudEmbed": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1451072428&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true",
-        "imageSrc": "./assets/image/portfolio/captulion/game_visual.png"
+        "imageSrc": "./assets/image/portfolio/captulion/game_visual.png",
+        "screenshots": [
+            { "type": "image", "src": "./assets/image/portfolio/captulion/game_visual.png" }
+        ]
     },
     {
         "id": 4,
         "title": "ぷらなりんかねーしょん！",
-        "about": "自作素材でアクションゲームを作るという目標に、Unityで実装したゲームです。",
+        "about": "自作素材でアクションゲームを作るという目標に、Unityで実装したゲームです.",
         "demoLinks": [
-            { "text": "ぷらなりんかねーしょん！", "url": "https://unityroom.com/games/planareincarnation" }
+            { "text": "ぷらなりんかねーしょん！ by unityroom", "url": "https://unityroom.com/games/planareincarnation" }
         ],
-        "soundcloudEmbed": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1321121503&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true",
-        "imageSrc": "./assets/image/portfolio/planareincarnation/game_visual.png"
+        "imageSrc": "./assets/image/portfolio/planareincarnation/game_visual.png",
+        "screenshots": [
+            { "type": "image", "src": "./assets/image/portfolio/planareincarnation/game_visual.png" }
+        ]
     },
     {
         "id": 5,
         "title": "TurboSoba",
-        "about": "特にこれといった長所もなく平凡な蕎麦屋を経営する店主「山田種雄」が、バイクで高速走行できる特性を活かして、超高速で出前をこなす様子を描いた蕎麦出前ゲームです。今後はStoryモードの実装や、主人公のドタバタ活劇を展開していく予定です。<br>Unityで開発した蕎麦出前ゲームです。",
+        "about": "特にこれといった長所もなく平凡な蕎麦屋を経営する店主「山田種雄」が、バイクで高速走行できる特性を活かして、超高速で出前をこなす様子を描いた蕎麦出前ゲームです。今後はStoryモードの実装や、主人公のドタバタ活劇を展開していく予定です。<br>Unityで開発した蕎麦出前ゲームです.",
         "story": "21世紀中頃、自動運転なども普及してますます人類の生活は便利に進化し続けていた。ただそんな進化に完全に乗り遅れた男がいた。<br>その名は蕎麦処を経営する山田種雄。手打ちと出前にこだわり続けて今日も熱きそばを片手に出前だ！",
-        "characters": "山田種雄<br>TurboSoba主人公。<br>呑気町（のんきちょう）の一角で蕎麦屋 今一（いまいち）を経営している55歳。世間一般が自動運転を取り入れている中、未だに自前で配達を続けている。一見パッとしないおじさんだが、バイクテクニックについては眼を見張るものがある。体もやけに丈夫で、車と正面衝突しても、ほぼ無傷。<br>配達完了時は少しイラっとするドヤ顔でおまちーといってくる。<br>配達に失敗すると全く嬉しくないサービスや言い訳を羅列する。（バリエーションは無駄に豊富）<br>長所…なし<br>短所…気が弱いわりに変なところで勢いにのり、大問題を起こす。（ただし本人に自覚はない）<br>特性…バイクの運転・加速テクニック（無自覚）、交通事故を起こしても無傷でいられるほどの強運。（運もあるが、体自体もやけに丈夫なようである。）<br>ー愛用のバイク<br>学生時代に武にバイクを試乗させてもらった時に、山田種雄自身も無自覚だったバイクの特性で、ターボ走行をし瞬く間に視界から消えていった。<br>あまりの出来事に武は呆気にとられていたが、種雄は何をしたのかまるでわかっておらず、これなら学校に遅刻しないかもと呑気に考えバイトしてスーパーカブを購入することになった.<br><br>ー蕎麦屋になった経緯<br>大学時代バイクを乗り回していて、空腹で行き倒れになったときに、たまたま行き倒れた場所の近くの老夫婦の経営するお蕎麦屋さんに蕎麦を振舞ってもらいその味に感動して以来、蕎麦を打つようになった。そして３０年ほどたった今もスーパーカブに乗って蕎麦の出前を続けている。蕎麦の味としては、いまいちパンチが効いておらずグルメサイトで2.4くらい.<br><br><br>山田花代<br>種雄の妻。40歳。若い頃はなかなかの美人で種雄を尻に敷いている。<br>実は元レディース、バイクには自信があったが、たまたま配達をしていた種雄に一方的にスピード勝負を挑み、種雄に追いつけないまま負けてしまう。その後種雄に押しかける形で結婚する。（種雄は未だに花代がなぜ求婚してきたのわからないままである）",
+        "characters": "山田種雄<br>TurboSoba主人公。<br>呑気町（のんきちょう）の一角で蕎麦屋 今一（いまいち）を経営している55歳。世間一般が自動運転を取り入れている中、未だに自前で配達を続けている。一見パッとしないおじさんだが、バイクテクニックについては眼を見張るものがある。<br>配達完了時は少しイラっとするドヤ顔でおまちーといってくる。<br>配達に失敗すると全く嬉しくないサービスや言い訳を羅列する。（バリエーションは無駄に豊富）<br>長所…なし<br>短所…気が弱いわりに変なところで勢いにのり、大問題を起こす。（ただし本人に自覚はない）<br>特性…バイクの運転・加速テクニック（無自覚）、交通事故を起こしても無傷でいられるほどの強運。（運もあるが、体自体もやけに丈夫なようである。）<br>ー愛用のバイク<br>学生時代に武にバイクを試乗させてもらった時に、山田種雄自身も無自覚だったバイクの特性で、ターボ走行をし瞬く間に視界から消えていった。<br>あまりの出来事に武は呆気にとられていたが、種雄は何をしたのかまるでわかっておらず、これなら学校に遅刻しないかもと呑気に考えバイトしてスーパーカブを購入することになった.<br><br>ー蕎麦屋になった経緯<br>大学時代バイクを乗り回していて、空腹で行き倒れになったときに、たまたま行き倒れた場所の近くの老夫婦の経営するお蕎麦屋さんに蕎麦を振舞ってもらいその味に感動して以来、蕎麦を打つようになった。そして３０年ほどたった今もスーパーカブに乗って蕎麦の出前を続けている。蕎麦の味としては、いまいちパンチが効いておらずグルメサイトで2.4くらい.<br><br><br>山田花代<br>種雄の妻。40歳。若い頃はなかなかの美人で種雄を尻に敷いている。",
         "demoLinks": [
-            { "text": "TurboSoba(V3)", "url": "https://unityroom.com/games/turbosoba_v3" },
-            { "text": "TurboSoba(V2.7)", "url": "https://unityroom.com/games/turbosoba_v2" },
-            { "text": "TurboSoba(V1)", "url": "https://unityroom.com/games/cz_mirror_turbosoba" }
+            { "text": "TurboSoba(V3) by unityroom", "url": "https://unityroom.com/games/turbosoba_v3" },
+            { "text": "TurboSoba(V2.7) by unityroom", "url": "https://unityroom.com/games/turbosoba_v2" },
+            { "text": "TurboSoba(V1) by unityroom", "url": "https://unityroom.com/games/cz_mirror_turbosoba" }
         ],
-        "soundcloudEmbed": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1845850113&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true",
-        "imageSrc": "./assets/image/portfolio/turbosoba/game_visual.jpg"
+        "imageSrc": "./assets/image/portfolio/turbosoba/game_visual.jpg",
+        "screenshots": [
+            { "type": "image", "src": "./assets/image/portfolio/turbosoba/game_visual.jpg" },
+            { "type": "image", "src": "./assets/image/portfolio/turbosoba/screenshot2.jpg" },
+            { "type": "image", "src": "./assets/image/portfolio/turbosoba/screenshot3.jpg" }
+        ]
     }
 ]
