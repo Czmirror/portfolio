@@ -19,8 +19,8 @@ const GameSection = ({
         screenshots && screenshots.length > 0 ? screenshots[0] : { type: "image", src: imageSrc }
     );
 
-    // 公開用のベースパスを process.env.PUBLIC_URL で補完
-    const baseUrl = process.env.PUBLIC_URL || "";
+    // GithubPage用URL設定
+    const baseUrl = import.meta.env.BASE_URL || "";
 
     return (
         <section id={sectionId} className="section portfolio slide-in store-section">
