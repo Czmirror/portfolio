@@ -19,6 +19,9 @@ const GameSection = ({
         screenshots && screenshots.length > 0 ? screenshots[0] : { type: "image", src: imageSrc }
     );
 
+    // 公開用のベースパスを process.env.PUBLIC_URL で補完
+    const baseUrl = process.env.PUBLIC_URL || "";
+
     return (
         <section id={sectionId} className="section portfolio slide-in store-section">
             <div className="container">
@@ -33,11 +36,11 @@ const GameSection = ({
                             <div className="main-media-container">
                                 {currentMedia.type === "video" ? (
                                     <video controls disablePictureInPicture className="main-media">
-                                        <source src={currentMedia.src} type="video/mp4" />
+                                        <source src={baseUrl + currentMedia.src} type="video/mp4" />
                                         お使いのブラウザでは動画が再生できません。
                                     </video>
                                 ) : (
-                                    <img src={currentMedia.src} alt={`${title} Main Media`} className="main-media" />
+                                    <img src={baseUrl + currentMedia.src} alt={`${title} Main Media`} className="main-media" />
                                 )}
                             </div>
                             {screenshots && screenshots.length > 1 && (
@@ -50,10 +53,10 @@ const GameSection = ({
                                         >
                                             {item.type === "video" ? (
                                                 <video muted disablePictureInPicture className="thumbnail" preload="metadata">
-                                                    <source src={item.src} type="video/mp4" />
+                                                    <source src={baseUrl + item.src} type="video/mp4" />
                                                 </video>
                                             ) : (
-                                                <img src={item.src} alt={`${title} thumbnail ${index + 1}`} className="thumbnail" />
+                                                <img src={baseUrl + item.src} alt={`${title} thumbnail ${index + 1}`} className="thumbnail" />
                                             )}
                                         </div>
                                     ))}
