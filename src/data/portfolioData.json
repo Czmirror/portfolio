@@ -67,9 +67,7 @@
         ],
         "imageSrc": "./assets/image/portfolio/turbosoba/game_visual.jpg",
         "screenshots": [
-            { "type": "image", "src": "./assets/image/portfolio/turbosoba/game_visual.jpg" },
-            { "type": "image", "src": "./assets/image/portfolio/turbosoba/screenshot2.jpg" },
-            { "type": "image", "src": "./assets/image/portfolio/turbosoba/screenshot3.jpg" }
+            { "type": "image", "src": "./assets/image/portfolio/turbosoba/game_visual.jpg" }
         ]
     }
 ]
