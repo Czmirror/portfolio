@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import updatesData from '../data/updates.json';
+import whatsnewData from '../data/whats_new.json';
 
-const Updates = () => {
-    const [updates, setUpdates] = useState([]);
+const Whatsnew = () => {
+    const [whatsnews, setWhatsnews] = useState([]);
 
     useEffect(() => {
-        setUpdates(updatesData);
+        setWhatsnews(whatsnewData);
     }, []);
 
     return (
@@ -13,19 +13,19 @@ const Updates = () => {
             <div className="container">
                 <h2 className="title is-3">What's new</h2>
                 <div className="columns is-multiline">
-                    {updates.map((update) => (
-                        <div className="column is-one-third" key={update.id}>
+                    {whatsnews.map((datum) => (
+                        <div className="column is-one-third" key={datum.id}>
                             <div className="card">
                                 <header className="card-header">
                                     <p className="card-header-title">
-                                        <time dateTime={update.date} className="mr-1">{new Date(update.date).toLocaleDateString()}</time>
+                                        <time dateTime={datum.date} className="mr-1">{new Date(datum.date).toLocaleDateString()}</time>
 
-                                        {update.title}
+                                        {datum.title}
                                     </p>
                                 </header>
                                 <div className="card-content">
                                     <div className="content">
-                                        {update.content}
+                                        {datum.content}
                                     </div>
                                 </div>
                             </div>
@@ -37,4 +37,4 @@ const Updates = () => {
     );
 };
 
-export default Updates;
+export default Whatsnew;

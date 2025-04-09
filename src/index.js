@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Updates from './components/Updates';
+import Whatsnew from './components/Whatsnew';
+import Portfolio from "./components/Portfolio";
 
 ReactDOM.render(
     React.createElement(
         React.StrictMode,
         null,
-        React.createElement(Updates, null)
+        React.createElement(Whatsnew, null)
     ),
-    document.getElementById('root')
+    document.getElementById('whats_new')
 );
+
+ReactDOM.render(
+    React.createElement(
+        React.StrictMode,
+        null,
+        React.createElement(Portfolio, null)
+    ),
+    document.getElementById('portfolio_area')
+)

@@ -1,6 +1,6 @@
 // src/App.js
 import React from 'react';
-import Updates from './components/Updates';
+import Whatsnew from './components/Whatsnew';
 
 function App() {
     return (
@@ -9,7 +9,7 @@ function App() {
                 <h1>My Portfolio</h1>
             </header>
             <main>
-                <Updates />
+                <Whatsnew />
             </main>
         </div>
     );
