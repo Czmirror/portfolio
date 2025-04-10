@@ -12,10 +12,10 @@
         ],
         "imageSrc": "./assets/image/portfolio/rayser/game_visual.png",
         "screenshots": [
-            { "type": "video", "src": "assets/image/portfolio/rayser/teaser.mp4" },
-            { "type": "image", "src": "assets/image/portfolio/rayser/screenshot1.png" },
-            { "type": "image", "src": "assets/image/portfolio/rayser/screenshot2.png" },
-            { "type": "image", "src": "assets/image/portfolio/rayser/screenshot3.png" }
+            { "type": "video", "src": "./assets/image/portfolio/rayser/teaser.mp4" },
+            { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot1.png" },
+            { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot2.png" },
+            { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot3.png" }
         ]
     },
     {
