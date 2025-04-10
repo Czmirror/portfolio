@@ -81,7 +81,7 @@ const GameSection = ({
                                         <ul>
                                             {demoLinks.map((link) => (
                                                 <li key={link.url}>
-                                                    <a href={link.url} className="store-link">{link.text}</a>
+                                                    <a href={link.url} className="store-link" target="_blank">{link.text}</a>
                                                 </li>
                                             ))}
                                         </ul>
