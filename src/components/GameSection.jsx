@@ -66,19 +66,18 @@ const GameSection = ({
                         {/* 右カラム：ゲーム概要 */}
                         <div className="column is-half">
                             <div className="game-overview">
-                                {/* About のみ mt0 にして、他は extra-margin を追加 */}
                                 <h4 className="title is-4 card-subtitle mt0">About</h4>
-                                <p className="about-content" dangerouslySetInnerHTML={{ __html: about }}></p>
+                                <p className="about-content is-size-7" dangerouslySetInnerHTML={{ __html: about }}></p>
                                 {platform && (
                                     <>
                                         <h4 className="title is-4 card-subtitle extra-margin">Platform</h4>
-                                        <p className="about-content" dangerouslySetInnerHTML={{ __html: platform }}></p>
+                                        <p className="about-content is-size-7" dangerouslySetInnerHTML={{ __html: platform }}></p>
                                     </>
                                 )}
                                 {demoLinks && demoLinks.length > 0 && (
                                     <>
                                         <h4 className="title is-4 card-subtitle extra-margin">Demo</h4>
-                                        <ul>
+                                        <ul className="is-size-7">
                                             {demoLinks.map((link) => (
                                                 <li key={link.url}>
                                                     <a href={link.url} className="store-link" target="_blank">{link.text}</a>
@@ -90,13 +89,13 @@ const GameSection = ({
                                 {story && (
                                     <>
                                         <h4 className="title is-4 card-subtitle extra-margin">Story</h4>
-                                        <p className="about-content" dangerouslySetInnerHTML={{ __html: story }}></p>
+                                        <p className="about-content is-size-7" dangerouslySetInnerHTML={{ __html: story }}></p>
                                     </>
                                 )}
                                 {characters && (
                                     <>
                                         <h4 className="title is-4 card-subtitle extra-margin">Characters</h4>
-                                        <p className="about-content" dangerouslySetInnerHTML={{ __html: characters }}></p>
+                                        <p className="about-content is-size-7" dangerouslySetInnerHTML={{ __html: characters }}></p>
                                     </>
                                 )}
                             </div>

@@ -250,6 +250,34 @@ body {
     border-radius: 3px;
 }
 
+.profile-header .subtitle {
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #c7d5e0;
+}
 
+.tag.is-link.is-light {
+    background-color: #e3f2fd;
+    color: #0366d6;
+    border: 1px solid #b3d8f7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.tag.is-link.is-light:hover {
+    background-color: #d1e7ff;
+    color: #023d88;
+}
 
+.career ul {
+    margin-bottom: 1rem;
+}
+.career ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+    .is-size-7 {
+        font-size: 0.9rem !important;
+    }
+}
 
