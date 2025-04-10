@@ -22,6 +22,14 @@
     background-size: cover;
 }
 
+.hero-text {
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(3px);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+}
+
 .profile-icon {
     width: 150px;
     height: 150px;

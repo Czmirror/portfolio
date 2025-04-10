@@ -3,7 +3,7 @@
         "id": 1,
         "sectionId": "portfolio",
         "title": "RAYSER",
-        "about": "80~90年代頃の懐かしい雰囲気のシューティングゲームを目標にUnityで開発中です。自動照準レーザーで敵機を殲滅しながら複数視点のステージを進めていく視点切り替え型の3Dシューティングゲームです。ピンチの時はボムによる緊急回避やローリング回避を駆使してください。<br>東京ゲームダンジョン2,4,5,7、横浜ゲームダンジョンで出展いたしました。今後も可能な限り出展できればと思います.",
+        "about": "80~90年代頃の懐かしい雰囲気のシューティングゲームを目標にUnityで開発中です。自動照準レーザーで敵機を殲滅しながら複数視点のステージを進めていく視点切り替え型の3Dシューティングゲームです。ピンチの時はボムによる緊急回避やローリング回避を駆使して切り抜けることができます。<br>東京ゲームダンジョン2,4,5,7、横浜ゲームダンジョンで出展いたしました。今後も可能な限り出展できればと思います.",
         "platform": "Steamで2025年中のリリースを予定しています。<br><a href='https://store.steampowered.com/app/3612510/RAYSER/' target='_blank'>Steamストアページ</a>",
         "demoLinks": [
             { "text": "RAYSER(V3) by unityroom", "url": "https://unityroom.com/games/rayser_v3" },
@@ -15,7 +15,8 @@
             { "type": "video", "src": "./assets/image/portfolio/rayser/teaser.mp4" },
             { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot1.png" },
             { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot2.png" },
-            { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot3.png" }
+            { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot5.png" },
+            { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot7.png" }
         ]
     },
     {
@@ -33,7 +34,7 @@
     {
         "id": 3,
         "title": "Captulion",
-        "about": "初めてUnityで開発した、敵機を捕獲する縦スクロールシューティングゲームです。敵機は雑魚キャラからボスキャラまで全て捕獲して自分の仲間とすることができ、味方となった敵機は自機を追尾して共に戦ったり、自機を守る盾にもなります.",
+        "about": "初めてUnityで開発した、敵機を捕獲する縦スクロールシューティングゲームです。自機は通常弾の他に、敵機を捕獲するキャプチャービームを発射することで敵機を捕獲することができます。全ての敵機が捕獲対象で雑魚キャラからボスキャラまで全て捕獲して自分の仲間とすることができ、味方となった敵機は自機を追尾して共に戦ったり、自機を守る盾にもなります。",
         "demoLinks": [
             { "text": "Captulion by unityroom", "url": "https://unityroom.com/games/captulion" }
         ],
