@@ -1,5 +1,7 @@
 // src/components/GameSection.jsx
 import React, { useState } from 'react';
+import { LazyImage, LazyVideo } from '../hooks/useLazyLoad.jsx';
+import { LazyIframe } from '../hooks/useLazyIframe.jsx';
 
 const GameSection = ({
                          sectionId,
@@ -19,8 +21,8 @@ const GameSection = ({
         screenshots && screenshots.length > 0 ? screenshots[0] : { type: "image", src: imageSrc }
     );
 
-    // GithubPage用URL設定
-    const baseUrl = import.meta.env.BASE_URL || "";
+    // 相対パスをそのまま使用（Viteが自動でbase pathを処理）
+    const getAssetUrl = (path) => path;
 
     return (
         <section id={sectionId} className="section portfolio slide-in store-section">
@@ -35,12 +37,18 @@ const GameSection = ({
                         <div className="column is-half">
                             <div className="main-media-container">
                                 {currentMedia.type === "video" ? (
-                                    <video controls disablePictureInPicture className="main-media">
-                                        <source src={baseUrl + currentMedia.src} type="video/mp4" />
-                                        お使いのブラウザでは動画が再生できません。
-                                    </video>
+                                    <LazyVideo 
+                                        src={getAssetUrl(currentMedia.src)} 
+                                        controls 
+                                        disablePictureInPicture 
+                                        className="main-media"
+                                    />
                                 ) : (
-                                    <img src={baseUrl + currentMedia.src} alt={`${title} Main Media`} className="main-media" />
+                                    <LazyImage 
+                                        src={getAssetUrl(currentMedia.src)} 
+                                        alt={`${title} Main Media`} 
+                                        className="main-media" 
+                                    />
                                 )}
                             </div>
                             {screenshots && screenshots.length > 1 && (
@@ -52,11 +60,19 @@ const GameSection = ({
                                             onClick={() => setCurrentMedia(item)}
                                         >
                                             {item.type === "video" ? (
-                                                <video muted disablePictureInPicture className="thumbnail" preload="metadata">
-                                                    <source src={baseUrl + item.src} type="video/mp4" />
-                                                </video>
+                                                <LazyVideo 
+                                                    src={getAssetUrl(item.src)} 
+                                                    muted 
+                                                    disablePictureInPicture 
+                                                    className="thumbnail" 
+                                                    preload="metadata"
+                                                />
                                             ) : (
-                                                <img src={baseUrl + item.src} alt={`${title} thumbnail ${index + 1}`} className="thumbnail" />
+                                                <LazyImage 
+                                                    src={getAssetUrl(item.src)} 
+                                                    alt={`${title} thumbnail ${index + 1}`} 
+                                                    className="thumbnail" 
+                                                />
                                             )}
                                         </div>
                                     ))}
@@ -107,14 +123,14 @@ const GameSection = ({
                             <div className="column">
                                 <h4 className="title is-4 card-subtitle extra-margin">Gameplay Video</h4>
                                 <div className="video-container">
-                                    <iframe
+                                    <LazyIframe
+                                        src={youtubeEmbed}
                                         width="100%"
                                         height="615"
-                                        src={youtubeEmbed}
                                         frameBorder="0"
                                         allowFullScreen
                                         title={`${title} Gameplay Video`}
-                                    ></iframe>
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -124,15 +140,15 @@ const GameSection = ({
                         <div className="columns is-marginless">
                             <div className="column">
                                 <h4 className="title is-4 card-subtitle extra-margin">SoundCloud Player</h4>
-                                <iframe
+                                <LazyIframe
+                                    src={soundcloudEmbed}
                                     width="100%"
                                     height="450"
                                     scrolling="no"
                                     frameBorder="no"
                                     allow="autoplay"
-                                    src={soundcloudEmbed}
                                     title={`${title} SoundCloud Player`}
-                                ></iframe>
+                                />
                             </div>
                         </div>
                     )}

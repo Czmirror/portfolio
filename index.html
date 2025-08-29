@@ -3,10 +3,35 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="public/favicon.ico">
-    <title>Cz_mirror's Portfolio</title>
+    <link rel="icon" href="/favicon.ico">
+    <title>Cz_mirror's Portfolio | Game Developer & Web Engineer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Cz_mirror (Kazushige Mori) - Game Developer & Web Engineer. Unity games including RAYSER, web development with PHP, Laravel, React. View portfolio and playable game demos.">
+    <meta name="keywords" content="ゲーム開発, Unity, Web開発, PHP, Laravel, React, RAYSER, インディーゲーム, ポートフォリオ">
+    <meta name="author" content="Cz_mirror, Kazushige Mori">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://czmirror.github.io/portfolio/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Cz_mirror's Portfolio | Game Developer & Web Engineer">
+    <meta property="og:description" content="Game Developer & Web Engineer showcasing Unity games and web development projects. Play demos and explore RAYSER and other indie games.">
+    <meta property="og:image" content="https://czmirror.github.io/portfolio/public/assets/image/RAYSER_Library_3840x1240.png">
+    <meta property="og:url" content="https://czmirror.github.io/portfolio/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cz_mirror's Portfolio">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Cz_mirror">
+    <meta name="twitter:creator" content="@Cz_mirror">
+    <meta name="twitter:title" content="Cz_mirror's Portfolio | Game Developer & Web Engineer">
+    <meta name="twitter:description" content="Game Developer & Web Engineer showcasing Unity games and web development projects. Play demos and explore RAYSER and other indie games.">
+    <meta name="twitter:image" content="https://czmirror.github.io/portfolio/public/assets/image/RAYSER_Library_3840x1240.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
-    <link rel="stylesheet" href="public/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JS9MLQN89W"></script>
     <script>
@@ -20,13 +45,59 @@
 
         gtag('config', 'G-JS9MLQN89W');
     </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kazushige Mori",
+        "alternateName": "Cz_mirror",
+        "url": "https://czmirror.github.io/portfolio/",
+        "image": "https://czmirror.github.io/portfolio/public/assets/image/icon_cz_mirror.png",
+        "jobTitle": ["Game Developer", "Web Engineer"],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Independent Developer"
+        },
+        "alumniOf": {
+            "@type": "Organization",
+            "name": "Game Development"
+        },
+        "knowsAbout": [
+            "Unity", "C#", "PHP", "Laravel", "React", "JavaScript", "Game Development", "Web Development"
+        ],
+        "sameAs": [
+            "https://github.com/Czmiror",
+            "https://x.com/Cz_mirror",
+            "https://unityroom.com/users/1xeulc2hnzogrj5483pm",
+            "https://soundcloud.com/kazushige-mori"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Cz_mirror's Portfolio",
+        "url": "https://czmirror.github.io/portfolio/",
+        "description": "Game Developer & Web Engineer portfolio showcasing Unity games and web development projects",
+        "author": {
+            "@type": "Person",
+            "name": "Kazushige Mori",
+            "alternateName": "Cz_mirror"
+        },
+        "inLanguage": ["ja", "en"]
+    }
+    </script>
 </head>
 <body>
 <!-- Navigation Menu -->
 <nav class="navbar is-transparent is-fixed-top">
     <div class="navbar-brand">
         <a class="navbar-item" href="#home">
-            <img src="public/assets/image/logo_Cz_mirror.png" alt="Logo">
+            <img src="./assets/image/logo_Cz_mirror.png" alt="Logo" loading="lazy">
         </a>
         <div class="navbar-burger burger" data-target="navbarMenu">
             <span></span>
@@ -62,9 +133,9 @@
         <h2 class="title has-text-centered">About Me</h2>
 
         <!-- プロフィール中央揃え -->
-        <div class="has-text-centered mb-6 profile-header">
+        <div class="has-text-centered mb-6 profile-header slide-in">
             <figure class="image is-128x128 is-inline-block mb-4">
-                <img class="profile-icon" src="public/assets/image/icon_cz_mirror.png" alt="Profile Icon">
+                <img class="profile-icon" src="./assets/image/icon_cz_mirror.png" alt="Profile Icon" loading="lazy">
             </figure>
             <p class="title is-5 mb-1"><strong>Cz_mirror / Kazushige Mori（森 一茂）</strong></p>
             <p class="subtitle is-6">
@@ -76,7 +147,7 @@
         <!-- 下層コンテンツ：経歴・リンク・スキル -->
         <div class="columns is-multiline">
             <!-- 経歴 -->
-            <div class="column is-one-third career">
+            <div class="column is-one-third career slide-in">
                 <h3 class="title is-4">自己紹介・経歴</h3>
                 <p class="has-text-weight-semibold">Web開発経験</p>
                 <ul class="mb-4 is-size-7">
@@ -92,7 +163,7 @@
             </div>
 
             <!-- リンク -->
-            <div class="column is-one-third">
+            <div class="column is-one-third slide-in">
                 <h3 class="title is-4">リンク</h3>
                 <div class="tags are-medium is-flex is-flex-wrap-wrap">
                     <a href="https://unityroom.com/users/1xeulc2hnzogrj5483pm" class="tag is-link is-light is-size-7" target="_blank">Unityroom</a>
@@ -108,7 +179,7 @@
             </div>
 
             <!-- スキル -->
-            <div class="column is-one-third">
+            <div class="column is-one-third slide-in">
                 <h3 class="title is-4">スキル</h3>
 
                 <p class="has-text-weight-semibold">Web開発</p>
@@ -172,7 +243,7 @@
         </p>
     </div>
 </footer>
-<script type="module" src="public/assets/js/animations.js"></script>
+<script src="./assets/js/animations.js"></script>
 <script type="module" src="./src/index.js"></script>
 </body>
 </html>
