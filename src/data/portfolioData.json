@@ -21,6 +21,22 @@
     },
     {
         "id": 2,
+        "title": "TypeGunner",
+        "about": "90年代頃のベルトアクションゲームのような雰囲気をもった感じを目指して、Godot Engineで制作したタイピングゲームです。<br>悪の組織と戦うストーリーモードの他に、タイピング早撃ちモードや、ブラインドタッチが苦手な方向けの練習モードも用意しています。<br>Web上で無料で遊べますので、よかったらプレイしていただけると嬉しいです。",
+        "demoLinks": [
+            { "text": "TypeGunner by unityroom", "url": "https://unityroom.com/games/typegunner" }
+        ],
+        "imageSrc": "./assets/image/portfolio/typegunner/screenshot1.png",
+        "screenshots": [
+            { "type": "video", "src": "./assets/image/portfolio/typegunner/movie.mp4" },
+            { "type": "image", "src": "./assets/image/portfolio/typegunner/screenshot1.png" },
+            { "type": "image", "src": "./assets/image/portfolio/typegunner/screenshot2.png" },
+            { "type": "image", "src": "./assets/image/portfolio/typegunner/screenshot3.png" },
+            { "type": "image", "src": "./assets/image/portfolio/typegunner/screenshot4.png" }
+        ]
+    },
+    {
+        "id": 3,
         "title": "No ise",
         "about": "１週間ゲームジャムお題「ない」に投稿した、UnityのWebGLでプレイ可能なノイズを取り除くミニゲームです。<br>Unity6から使えるようになったWebGLのモバイルブラウザ対応の検証用に実装してみました。",
         "demoLinks": [
@@ -32,7 +48,7 @@
         ]
     },
     {
-        "id": 3,
+        "id": 4,
         "title": "Captulion",
         "about": "初めてUnityで開発した、敵機を捕獲する縦スクロールシューティングゲームです。自機は通常弾の他に、敵機を捕獲するキャプチャービームを発射することで敵機を捕獲することができます。全ての敵機が捕獲対象で雑魚キャラからボスキャラまで全て捕獲して自分の仲間とすることができ、味方となった敵機は自機を追尾して共に戦ったり、自機を守る盾にもなります。",
         "demoLinks": [
@@ -44,7 +60,7 @@
         ]
     },
     {
-        "id": 4,
+        "id": 5,
         "title": "ぷらなりんかねーしょん！",
         "about": "自作素材でアクションゲームを作るという目標に、Unityで実装したゲームです.",
         "demoLinks": [
@@ -56,7 +72,7 @@
         ]
     },
     {
-        "id": 5,
+        "id": 6,
         "title": "TurboSoba",
         "about": "特にこれといった長所もなく平凡な蕎麦屋を経営する店主「山田種雄」が、バイクで高速走行できる特性を活かして、超高速で出前をこなす様子を描いた蕎麦出前ゲームです。今後はStoryモードの実装や、主人公のドタバタ活劇を展開していく予定です。<br>Unityで開発した蕎麦出前ゲームです.",
         "story": "21世紀中頃、自動運転なども普及してますます人類の生活は便利に進化し続けていた。ただそんな進化に完全に乗り遅れた男がいた。<br>その名は蕎麦処を経営する山田種雄。手打ちと出前にこだわり続けて今日も熱きそばを片手に出前だ！",

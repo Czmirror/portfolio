@@ -1,5 +1,11 @@
 [
     {
+        "id": 6,
+        "title": "TypeGunner を追加",
+        "content": "ポートフォリオに TypeGunner を追加しました。",
+        "date": "2026-05-04"
+    },
+    {
         "id": 5,
         "title": "RAYSER アップデート v3.5.2",
         "content": "新機能：敵AI強化、武器バランス調整、パフォーマンス最適化を実施しました。",
