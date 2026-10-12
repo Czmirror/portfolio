@@ -1,10 +1,24 @@
 [
     {
+        "id": 7,
+        "sectionId": "chikenrunv2",
+        "title": "崖っぷちチキンラン(V2)",
+        "about": "Godotで制作した、バイクを崖の手前で止めるチキンランゲームです。スペースキーを押すと加速し、離すとブレーキがかかります。崖に近い位置で止まるほど高得点を狙えます。<br>砂利・氷・凸凹など、路面によって加速やブレーキの感覚が変化します。停止距離を縮めたり、連続クリアでコンボを伸ばしたりしながら、ランキングに挑戦できます。<br>操作：スペースキーで加速・ブレーキ、R・Enterでリトライ、クリア後はNで次のステージへ。画面上のボタンでも操作できます。",
+        "platform": "unityroomで無料公開中です。PCのWebブラウザで遊べます。",
+        "demoLinks": [
+            { "text": "崖っぷちチキンラン(V2) by unityroom", "url": "https://unityroom.com/games/chikenrunv2" }
+        ],
+        "imageSrc": "./assets/image/portfolio/chikenrunv2/game_visual.gif",
+        "screenshots": [
+            { "type": "image", "src": "./assets/image/portfolio/chikenrunv2/game_visual.gif" }
+        ]
+    },
+    {
         "id": 1,
-        "sectionId": "portfolio",
+        "sectionId": "rayser",
         "title": "RAYSER",
         "about": "80~90年代頃の懐かしい雰囲気のシューティングゲームを目標にUnityで開発中です。自動照準レーザーで敵機を殲滅しながら複数視点のステージを進めていく視点切り替え型の3Dシューティングゲームです。ピンチの時はボムによる緊急回避やローリング回避を駆使して切り抜けることができます。<br>東京ゲームダンジョン2,4,5,7,8,9、横浜ゲームダンジョンで出展いたしました。今後も可能な限り出展できればと思います.",
-        "platform": "2025年5月3日にSteamでリリースしました。<br><a href='https://store.steampowered.com/app/3612510/RAYSER/' target='_blank'>Steamストアページ</a>",
+        "platform": "2025年5月3日にSteamでリリースしました。<br><a href='https://store.steampowered.com/app/3612510/RAYSER/' target='_blank' rel='noopener noreferrer'>Steamストアページ</a>",
         "demoLinks": [
             { "text": "RAYSER(V3) by unityroom", "url": "https://unityroom.com/games/rayser_v3" },
             { "text": "RAYSER(V2) by unityroom", "url": "https://unityroom.com/games/rayser_v2" },

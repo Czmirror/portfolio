@@ -1,8 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.documentElement.classList.add('js');
+    if (!prefersReducedMotion) {
+        document.documentElement.classList.add('motion-ok');
+    }
+
     const slideInElements = document.querySelectorAll('.slide-in');
     const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
     function checkSlideIn() {
+        if (prefersReducedMotion) {
+            slideInElements.forEach(element => element.classList.add('visible'));
+            return;
+        }
+
         slideInElements.forEach(element => {
             const slideInAt = (window.scrollY + window.innerHeight) - element.clientHeight / 2;
             const elementBottom = element.offsetTop + element.clientHeight;
@@ -20,10 +31,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('.navbar a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (!target) {
+                return;
+            }
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+            e.preventDefault();
+            target.classList.add('visible');
+            target.querySelectorAll('.slide-in').forEach(element => element.classList.add('visible'));
+
+            target.scrollIntoView({
+                behavior: prefersReducedMotion ? 'auto' : 'smooth'
             });
         });
     });

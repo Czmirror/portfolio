@@ -27,9 +27,6 @@ const GameSection = ({
     return (
         <section id={sectionId} className="section portfolio slide-in store-section">
             <div className="container">
-                {sectionId && (
-                    <h2 className="title store-title">Portfolio</h2>
-                )}
                 <div className="store-card card">
                     <h3 className="title is-3 has-text-centered card-title">{title}</h3>
                     <div className="columns">
@@ -46,7 +43,7 @@ const GameSection = ({
                                 ) : (
                                     <LazyImage 
                                         src={getAssetUrl(currentMedia.src)} 
-                                        alt={`${title} Main Media`} 
+                                        alt={`${title}のメイン画像`}
                                         className="main-media" 
                                     />
                                 )}
@@ -58,6 +55,15 @@ const GameSection = ({
                                             key={index}
                                             className={`thumbnail-wrapper ${currentMedia.src === item.src ? 'active' : ''}`}
                                             onClick={() => setCurrentMedia(item)}
+                                            onKeyDown={(event) => {
+                                                if (event.key === 'Enter' || event.key === ' ') {
+                                                    event.preventDefault();
+                                                    setCurrentMedia(item);
+                                                }
+                                            }}
+                                            role="button"
+                                            tabIndex="0"
+                                            aria-label={`${title}の表示メディアを${index + 1}番目に切り替える`}
                                         >
                                             {item.type === "video" ? (
                                                 <LazyVideo 
@@ -70,7 +76,7 @@ const GameSection = ({
                                             ) : (
                                                 <LazyImage 
                                                     src={getAssetUrl(item.src)} 
-                                                    alt={`${title} thumbnail ${index + 1}`} 
+                                                    alt={`${title}のサムネイル ${index + 1}`}
                                                     className="thumbnail" 
                                                 />
                                             )}
@@ -82,21 +88,21 @@ const GameSection = ({
                         {/* 右カラム：ゲーム概要 */}
                         <div className="column is-half">
                             <div className="game-overview">
-                                <h4 className="title is-4 card-subtitle mt0">About</h4>
+                                <h4 className="title is-4 card-subtitle mt0">作品概要</h4>
                                 <p className="about-content is-size-7" dangerouslySetInnerHTML={{ __html: about }}></p>
                                 {platform && (
                                     <>
-                                        <h4 className="title is-4 card-subtitle extra-margin">Platform</h4>
+                                        <h4 className="title is-4 card-subtitle extra-margin">対応プラットフォーム</h4>
                                         <p className="about-content is-size-7" dangerouslySetInnerHTML={{ __html: platform }}></p>
                                     </>
                                 )}
                                 {demoLinks && demoLinks.length > 0 && (
                                     <>
-                                        <h4 className="title is-4 card-subtitle extra-margin">Demo</h4>
+                                        <h4 className="title is-4 card-subtitle extra-margin">デモ・関連リンク</h4>
                                         <ul className="is-size-7">
                                             {demoLinks.map((link) => (
                                                 <li key={link.url}>
-                                                    <a href={link.url} className="store-link" target="_blank">{link.text}</a>
+                                                    <a href={link.url} className="store-link" target="_blank" rel="noopener noreferrer">{link.text}</a>
                                                 </li>
                                             ))}
                                         </ul>
@@ -104,13 +110,13 @@ const GameSection = ({
                                 )}
                                 {story && (
                                     <>
-                                        <h4 className="title is-4 card-subtitle extra-margin">Story</h4>
+                                        <h4 className="title is-4 card-subtitle extra-margin">ストーリー</h4>
                                         <p className="about-content is-size-7" dangerouslySetInnerHTML={{ __html: story }}></p>
                                     </>
                                 )}
                                 {characters && (
                                     <>
-                                        <h4 className="title is-4 card-subtitle extra-margin">Characters</h4>
+                                        <h4 className="title is-4 card-subtitle extra-margin">キャラクター</h4>
                                         <p className="about-content is-size-7" dangerouslySetInnerHTML={{ __html: characters }}></p>
                                     </>
                                 )}
@@ -121,7 +127,7 @@ const GameSection = ({
                     {youtubeEmbed && (
                         <div className="columns is-marginless">
                             <div className="column">
-                                <h4 className="title is-4 card-subtitle extra-margin">Gameplay Video</h4>
+                                <h4 className="title is-4 card-subtitle extra-margin">ゲームプレイ動画</h4>
                                 <div className="video-container">
                                     <LazyIframe
                                         src={youtubeEmbed}
@@ -129,7 +135,7 @@ const GameSection = ({
                                         height="615"
                                         frameBorder="0"
                                         allowFullScreen
-                                        title={`${title} Gameplay Video`}
+                                        title={`${title} ゲームプレイ動画`}
                                     />
                                 </div>
                             </div>
@@ -139,7 +145,7 @@ const GameSection = ({
                     {soundcloudEmbed && (
                         <div className="columns is-marginless">
                             <div className="column">
-                                <h4 className="title is-4 card-subtitle extra-margin">SoundCloud Player</h4>
+                                <h4 className="title is-4 card-subtitle extra-margin">SoundCloudプレイヤー</h4>
                                 <LazyIframe
                                     src={soundcloudEmbed}
                                     width="100%"
@@ -147,7 +153,7 @@ const GameSection = ({
                                     scrolling="no"
                                     frameBorder="no"
                                     allow="autoplay"
-                                    title={`${title} SoundCloud Player`}
+                                    title={`${title} SoundCloudプレイヤー`}
                                 />
                             </div>
                         </div>
