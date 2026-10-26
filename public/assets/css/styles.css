@@ -19,6 +19,9 @@
     --pattern-step: 24px;
     /* 背景画像の見え方の仮の値。スマホでは文字を優先してさらに薄くします。 */
     --about-texture-opacity: 0.45;
+    --sci-fi-texture: url('../image/backgrounds/sci-fi-circuit.png');
+    --panel-texture-opacity: 0.3;
+    --contact-texture-opacity: 0.3;
 }
 
 .section {
@@ -39,16 +42,61 @@
     width: 100%;
     aspect-ratio: 1680 / 944;
     z-index: -1;
-    background: url('../image/backgrounds/sci-fi-circuit.png') center / cover no-repeat;
+    background: var(--sci-fi-texture) center / cover no-repeat;
     opacity: var(--about-texture-opacity);
     -webkit-mask-image: linear-gradient(transparent, #000 20%, #000 75%, transparent);
     mask-image: linear-gradient(transparent, #000 20%, #000 75%, transparent);
     pointer-events: none;
 }
 
+/* 大きなカードの左下だけに模様を残し、本文・作品画像の中央は静かに保ちます。 */
+#portfolio > .container > .store-card,
+.portfolio .store-card,
+.service-card,
+#contact {
+    position: relative;
+    isolation: isolate;
+}
+
+#portfolio > .container > .store-card::before,
+.portfolio .store-card::before,
+.service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--sci-fi-texture) left bottom / 100% auto no-repeat;
+    opacity: var(--panel-texture-opacity);
+    -webkit-mask-image: radial-gradient(ellipse at left bottom, #000, transparent 70%);
+    mask-image: radial-gradient(ellipse at left bottom, #000, transparent 70%);
+    pointer-events: none;
+}
+
+/* お問い合わせはフォームの背後ではなく、セクションの余白へ光をなじませます。 */
+#contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--sci-fi-texture) right bottom / 100% auto no-repeat;
+    opacity: var(--contact-texture-opacity);
+    -webkit-mask-image: linear-gradient(transparent 10%, #000 55%, transparent);
+    mask-image: linear-gradient(transparent 10%, #000 55%, transparent);
+    pointer-events: none;
+}
+
 @media (max-width: 768px) {
     #about {
         --about-texture-opacity: 0.35;
+    }
+
+    #portfolio,
+    .portfolio,
+    .service-card,
+    #contact {
+        --panel-texture-opacity: 0.22;
+        --contact-texture-opacity: 0.22;
     }
 }
 
