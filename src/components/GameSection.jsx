@@ -4,6 +4,7 @@ import { LazyImage, LazyVideo } from '../hooks/useLazyLoad.jsx';
 import { LazyIframe } from '../hooks/useLazyIframe.jsx';
 
 const GameSection = ({
+                         analyticsId,
                          sectionId,
                          title,
                          about,
@@ -22,7 +23,7 @@ const GameSection = ({
     );
 
     return (
-        <section id={sectionId} className="section portfolio slide-in store-section">
+        <section id={sectionId} className="section portfolio slide-in store-section" data-analytics-work={analyticsId}>
             <div className="container">
                 <div className="store-card card">
                     <h3 className="title is-3 has-text-centered card-title">{title}</h3>
