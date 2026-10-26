@@ -1,6 +1,10 @@
 # Enviroment
 .env
 
+# Local AI settings and generated reports
+.claude/settings.local.json
+.harness/reports/
+
 # Jetbrain
 .idea/
 
