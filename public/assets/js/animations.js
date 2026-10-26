@@ -1,3 +1,4 @@
+// index.htmlの読み込み後、ページ内リンク、表示アニメーション、モバイルナビゲーションを初期化します。
 document.addEventListener('DOMContentLoaded', function () {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.documentElement.classList.add('js');
@@ -51,8 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
         navbarBurgers.forEach(function (el) {
             el.addEventListener('click', function () {
                 const target = document.getElementById(el.dataset.target);
-                el.classList.toggle('is-active');
-                target.classList.toggle('is-active');
+                if (!target) {
+                    return;
+                }
+
+                const isExpanded = el.classList.toggle('is-active');
+                target.classList.toggle('is-active', isExpanded);
+                el.setAttribute('aria-expanded', String(isExpanded));
             });
         });
     }

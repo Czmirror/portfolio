@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from 'react';
+// src/index.jsから読み込まれ、お知らせを3件ずつ表示します。状態は表示ページだけを保持します。
+import React, { useState } from 'react';
 import whatsnewData from '../data/whats_new.json';
 
 const Whatsnew = () => {
-    const [whatsnews, setWhatsnews] = useState([]);
     const [pageIndex, setPageIndex] = useState(0);
     const pageSize = 3;
 
-    useEffect(() => {
-        setWhatsnews(whatsnewData);
-    }, []);
-
-    const totalPages = Math.max(1, Math.ceil(whatsnews.length / pageSize));
-    const currentNews = whatsnews.slice(pageIndex * pageSize, (pageIndex + 1) * pageSize);
+    const totalPages = Math.max(1, Math.ceil(whatsnewData.length / pageSize));
+    const currentNews = whatsnewData.slice(pageIndex * pageSize, (pageIndex + 1) * pageSize);
     const canGoPrevious = pageIndex > 0;
     const canGoNext = pageIndex < totalPages - 1;
 
@@ -45,14 +41,14 @@ const Whatsnew = () => {
             <div className="container">
                 <div className="whats-new-heading">
                     <h2 className="title is-3">What's new</h2>
-                    {whatsnews.length > pageSize && (
+                    {whatsnewData.length > pageSize && (
                         <p className="whats-new-count">
                             {pageIndex + 1} / {totalPages}
                         </p>
                     )}
                 </div>
                 <div className="whats-new-carousel">
-                    {whatsnews.length > pageSize && (
+                    {whatsnewData.length > pageSize && (
                         <button
                             type="button"
                             className="whats-new-nav whats-new-nav--prev"
@@ -72,7 +68,7 @@ const Whatsnew = () => {
                             ))}
                         </div>
                     </div>
-                    {whatsnews.length > pageSize && (
+                    {whatsnewData.length > pageSize && (
                         <button
                             type="button"
                             className="whats-new-nav whats-new-nav--next"
