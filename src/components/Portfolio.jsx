@@ -71,6 +71,7 @@ const priceGuides = [
 const webWorks = [
     {
         title: 'UINya',
+        analyticsId: 'uinya',
         imageSrc: './assets/image/portfolio/web/uinya.png',
         imageAlt: 'UINyaのUI素材エディタ画面',
         summary: '猫モチーフのゲームUI素材を作成できるSVGジェネレーターです。',
@@ -84,6 +85,7 @@ const webWorks = [
     },
     {
         title: 'MimiLab',
+        analyticsId: 'mimilab',
         imageSrc: './assets/image/portfolio/web/mimilab.png',
         imageAlt: 'MimiLabの音楽キー・BPM解析ページ',
         summary: '音声ファイルや動画URLからキー、スケール、BPMなどを解析する耳コピ補助アプリです。',
@@ -98,6 +100,7 @@ const webWorks = [
     },
     {
         title: 'PULSE',
+        analyticsId: 'pulse',
         imageSrc: './assets/image/portfolio/web/pulse.png',
         imageAlt: 'PULSEのブラウザリズムゲーム画面',
         summary: 'Rust製ゲームエンジンBevyをWASMで動かした、ブラウザで遊べるリズムゲームです。',
@@ -224,7 +227,7 @@ const Portfolio = () => {
                         </p>
                         <div className="web-work-list">
                             {webWorks.map((work) => (
-                                <article className="web-work-card" key={work.title}>
+                                <article className="web-work-card" key={work.title} data-analytics-work={work.analyticsId}>
                                     <div className="web-work-layout">
                                         <figure className="web-work-media">
                                             <img src={work.imageSrc} alt={work.imageAlt} loading="lazy" />
@@ -272,6 +275,7 @@ const Portfolio = () => {
             {portfolioData.map((game) => (
                 <GameSection
                     key={game.id}
+                    analyticsId={`game-${game.id}`}
                     sectionId={game.sectionId}
                     title={game.title}
                     about={game.about}

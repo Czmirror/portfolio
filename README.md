@@ -58,6 +58,7 @@ npm run serve -- --host 127.0.0.1 --port 4173 --base /portfolio/
 | --- | --- |
 | `index.html` | ナビゲーション、自己紹介・スキル、問い合わせなどの静的な構成 |
 | `src/index.js` | 更新履歴と制作実績のReact描画の入口 |
+| `src/analytics.mjs` | 本番URL限定のGA初期化と作品・相談リンクの追加計測 |
 | `src/components/` | 更新履歴、制作実績、作品カード |
 | `src/hooks/` | 画像・動画・埋め込みの遅延読み込み |
 | `src/data/portfolioData.json` | ゲーム作品の掲載データ |
@@ -66,7 +67,7 @@ npm run serve -- --host 127.0.0.1 --port 4173 --base /portfolio/
 | `public/assets/image/` | 画像・動画・背景。素材の出典は各ディレクトリの台帳を参照 |
 | `public/assets/js/animations.js` | 表示アニメーション、ページ内移動、メニュー操作 |
 | `game/` | ゲーム実装。現在のViteビルドでは独立した公開ページとして設定していない |
-| `tests/` | 表示判定の回帰テスト |
+| `tests/` | 表示判定とGA計測の回帰テスト |
 | `docs/` | 既知の問題、作業計画、検証記録 |
 | `.harness/upstream/` | 非公開の共通ハーネス（Gitサブモジュール） |
 
@@ -84,7 +85,7 @@ npm run serve -- --host 127.0.0.1 --port 4173 --base /portfolio/
 ## 検証
 
 ```sh
-node --test tests/animations.test.cjs
+node --test tests/*.test.cjs tests/*.test.mjs
 GITHUB_PAGES=1 npm run build
 git diff --check
 ```
@@ -92,6 +93,12 @@ git diff --check
 lint・型検査用のnpmスクリプトは未設定です。ビルドや単体テストに加え、PC・スマホの表示、画像・動画の読み込み、メニュー操作、途中リロードを確認します。
 
 既存の警告と未対応事項は [既知の問題](docs/known-issues.md) を参照してください。
+
+## アクセス計測と流入導線
+
+GAは本番の `https://czmirror.github.io/portfolio/` 配下だけで読み込みます。ローカルの開発・プレビューでは読み込みません。作品リンクは `work_link_click`、相談案内は `consultation_click`、問い合わせ導線は `contact_click` として計測します。問い合わせ送信完了とは区別してください。
+
+[計測仕様](docs/specs/analytics.md)と[流入元別リンク・運用手順](docs/growth.md)を参照してください。新しい作品はカードの固定IDと計測側の許可リストをそろえて追加します。`item_id`・`link_type`・`placement` の内訳表示には、必要に応じてGA側でカスタムディメンションを登録します。
 
 ## 公開
 
