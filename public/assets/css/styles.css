@@ -17,10 +17,39 @@
     --shadow-panel: 0 12px 30px rgba(0, 0, 0, 0.18), inset 0 1px rgba(190, 237, 245, 0.04);
     --shadow-panel-hover: 0 14px 34px rgba(0, 0, 0, 0.26), inset 0 1px rgba(120, 220, 232, 0.24);
     --pattern-step: 24px;
+    /* 背景画像の見え方の仮の値。スマホでは文字を優先してさらに薄くします。 */
+    --about-texture-opacity: 0.1;
 }
 
 .section {
     padding-top: 5rem; /* 適切な余白を追加 */
+}
+
+/* 独立した装飾レイヤーなので、本文の透明度・配置・クリック判定には影響しません。 */
+#about {
+    position: relative;
+    isolation: isolate;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1680 / 944;
+    z-index: -1;
+    background: url('../image/backgrounds/sci-fi-circuit.png') center / cover no-repeat;
+    opacity: var(--about-texture-opacity);
+    -webkit-mask-image: linear-gradient(transparent, #000 20%, #000 75%, transparent);
+    mask-image: linear-gradient(transparent, #000 20%, #000 75%, transparent);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    #about {
+        --about-texture-opacity: 0.06;
+    }
 }
 
 #home,
