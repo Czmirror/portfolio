@@ -16,18 +16,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         slideInElements.forEach(element => {
-            const slideInAt = (window.scrollY + window.innerHeight) - element.clientHeight / 2;
-            const elementBottom = element.offsetTop + element.clientHeight;
-            const isHalfShown = slideInAt > element.offsetTop;
-            const isNotScrolledPast = window.scrollY < elementBottom;
-
-            if (isHalfShown && isNotScrolledPast) {
+            // offsetTopは親要素基準なので使わず、入れ子も同じ画面座標で判定します。
+            // 復元位置より上の要素も表示し、リロード後に透明なまま残さないようにします。
+            if (element.getBoundingClientRect().top < window.innerHeight) {
                 element.classList.add('visible');
             }
         });
     }
 
-    window.addEventListener('scroll', checkSlideIn);
+    window.addEventListener('scroll', checkSlideIn, { passive: true });
+    window.addEventListener('resize', checkSlideIn);
+    window.addEventListener('load', checkSlideIn);
+    window.addEventListener('pageshow', checkSlideIn);
     checkSlideIn(); // 初期表示時にもチェックを行う
 
     document.querySelectorAll('.navbar a').forEach(anchor => {
