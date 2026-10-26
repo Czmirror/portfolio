@@ -1,4 +1,4 @@
-// src/components/GameSection.jsx
+// Portfolioから渡された作品情報を表示します。メディアの相対URLはデータの値をそのまま使用します。
 import React, { useState } from 'react';
 import { LazyImage, LazyVideo } from '../hooks/useLazyLoad.jsx';
 import { LazyIframe } from '../hooks/useLazyIframe.jsx';
@@ -21,9 +21,6 @@ const GameSection = ({
         screenshots && screenshots.length > 0 ? screenshots[0] : { type: "image", src: imageSrc }
     );
 
-    // 相対パスをそのまま使用（Viteが自動でbase pathを処理）
-    const getAssetUrl = (path) => path;
-
     return (
         <section id={sectionId} className="section portfolio slide-in store-section">
             <div className="container">
@@ -35,14 +32,14 @@ const GameSection = ({
                             <div className="main-media-container">
                                 {currentMedia.type === "video" ? (
                                     <LazyVideo 
-                                        src={getAssetUrl(currentMedia.src)} 
+                                        src={currentMedia.src}
                                         controls 
                                         disablePictureInPicture 
                                         className="main-media"
                                     />
                                 ) : (
                                     <LazyImage 
-                                        src={getAssetUrl(currentMedia.src)} 
+                                        src={currentMedia.src}
                                         alt={`${title}のメイン画像`}
                                         className="main-media" 
                                     />
@@ -67,7 +64,7 @@ const GameSection = ({
                                         >
                                             {item.type === "video" ? (
                                                 <LazyVideo 
-                                                    src={getAssetUrl(item.src)} 
+                                                    src={item.src}
                                                     muted 
                                                     disablePictureInPicture 
                                                     className="thumbnail" 
@@ -75,7 +72,7 @@ const GameSection = ({
                                                 />
                                             ) : (
                                                 <LazyImage 
-                                                    src={getAssetUrl(item.src)} 
+                                                    src={item.src}
                                                     alt={`${title}のサムネイル ${index + 1}`}
                                                     className="thumbnail" 
                                                 />

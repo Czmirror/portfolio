@@ -1,5 +1,5 @@
-// src/components/Portfolio.jsx
-import React, { useEffect, useState, useRef } from 'react';
+// src/index.jsから読み込まれ、相談案内と制作実績を静的データから表示します。
+import React, { useEffect, useRef } from 'react';
 import GameSection from './GameSection';
 import portfolioData from '../data/portfolioData.json';
 
@@ -113,13 +113,7 @@ const webWorks = [
 ];
 
 const Portfolio = () => {
-    const [games, setGames] = useState([]);
     const portfolioRef = useRef(null);
-
-    useEffect(() => {
-        // JSONデータからゲーム情報をセットする
-        setGames(portfolioData);
-    }, []);
 
     useEffect(() => {
         const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -145,7 +139,7 @@ const Portfolio = () => {
         return () => {
             slideElements.forEach(el => observer.unobserve(el));
         };
-    }, [games]);
+    }, []);
 
     return (
         <div ref={portfolioRef}>
@@ -275,7 +269,7 @@ const Portfolio = () => {
                 </div>
             </section>
 
-            {games.map((game) => (
+            {portfolioData.map((game) => (
                 <GameSection
                     key={game.id}
                     sectionId={game.sectionId}
