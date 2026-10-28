@@ -283,6 +283,9 @@ const Portfolio = () => {
                     demoLinks={game.demoLinks}
                     youtubeEmbed={game.youtubeEmbed}
                     soundcloudEmbed={game.soundcloudEmbed}
+                    soundcloudTitle={game.soundcloudTitle}
+                    soundcloudTrackUrl={game.soundcloudTrackUrl}
+                    musicNote={game.musicNote}
                     imageSrc={game.imageSrc}
                     screenshots={game.screenshots}
                     story={game.story}

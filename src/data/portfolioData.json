@@ -31,7 +31,8 @@
             { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot2.png" },
             { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot5.png" },
             { "type": "image", "src": "./assets/image/portfolio/rayser/screenshot7.png" }
-        ]
+        ],
+        "musicNote": "Steam公開版では、外部から提供いただいた楽曲を使用しています。"
     },
     {
         "id": 2,
@@ -47,7 +48,8 @@
             { "type": "image", "src": "./assets/image/portfolio/typegunner/screenshot2.png" },
             { "type": "image", "src": "./assets/image/portfolio/typegunner/screenshot3.png" },
             { "type": "image", "src": "./assets/image/portfolio/typegunner/screenshot4.png" }
-        ]
+        ],
+        "musicNote": "Sunoを活用してゲーム用の楽曲を制作し、ゲーム内に組み込んでいます。"
     },
     {
         "id": 3,
@@ -71,7 +73,11 @@
         "imageSrc": "./assets/image/portfolio/captulion/game_visual.png",
         "screenshots": [
             { "type": "image", "src": "./assets/image/portfolio/captulion/game_visual.png" }
-        ]
+        ],
+        "musicNote": "このゲームのために制作した自作BGMをSoundCloudで公開しています。",
+        "soundcloudTitle": "Captulion stage1 mission",
+        "soundcloudTrackUrl": "https://soundcloud.com/kazushige-mori/captulion-stage1-mission",
+        "soundcloudEmbed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fkazushige-mori%2Fcaptulion-stage1-mission&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false"
     },
     {
         "id": 5,
@@ -99,6 +105,10 @@
         "imageSrc": "./assets/image/portfolio/turbosoba/game_visual.jpg",
         "screenshots": [
             { "type": "image", "src": "./assets/image/portfolio/turbosoba/game_visual.jpg" }
-        ]
+        ],
+        "musicNote": "このゲームのために制作した自作BGMをSoundCloudで公開しています。",
+        "soundcloudTitle": "Turbo Soba! Stage",
+        "soundcloudTrackUrl": "https://soundcloud.com/kazushige-mori/turbo-soba-stage",
+        "soundcloudEmbed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fkazushige-mori%2Fturbo-soba-stage&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false"
     }
 ]
