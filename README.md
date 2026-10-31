@@ -74,7 +74,7 @@ npm run serve -- --host 127.0.0.1 --port 4173 --base /portfolio/
 ## 掲載内容の更新
 
 - 経歴・スキル・連絡先: `index.html`
-- Web制作物の紹介: `src/components/Portfolio.jsx`
+- Web制作物・コラボレーションの紹介: `src/components/Portfolio.jsx`
 - ゲーム作品: `src/data/portfolioData.json`
 - 更新履歴: `src/data/whats_new.json` の先頭に、重複しないIDと日付を付けて追加
 

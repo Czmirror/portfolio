@@ -283,12 +283,42 @@ const Portfolio = () => {
                     demoLinks={game.demoLinks}
                     youtubeEmbed={game.youtubeEmbed}
                     soundcloudEmbed={game.soundcloudEmbed}
+                    soundcloudTitle={game.soundcloudTitle}
+                    soundcloudTrackUrl={game.soundcloudTrackUrl}
+                    musicNote={game.musicNote}
                     imageSrc={game.imageSrc}
                     screenshots={game.screenshots}
                     story={game.story}
                     characters={game.characters}
                 />
             ))}
+
+            <section id="collaboration" className="section slide-in store-section">
+                <div className="container">
+                    <h2 className="title store-title">コラボレーション</h2>
+                    <article className="store-card collaboration-card">
+                        <p className="showcase-label">共同制作への参加</p>
+                        <h3 className="title is-4 card-title">犯罪者隔離世界</h3>
+                        <p className="about-content is-size-7">
+                            ミニゲームを含むアドベンチャーゲームに、実装担当として参加しました。
+                        </p>
+                        <dl className="case-format">
+                            <div>
+                                <dt>担当したこと</dt>
+                                <dd>第一話のミニゲーム「ロボットシューティング」の実装</dd>
+                            </div>
+                            <div>
+                                <dt>作品について</dt>
+                                <dd>
+                                    <a href="https://azami0828gamecreat.wixsite.com/hankaku-hp" className="store-link" target="_blank" rel="noopener noreferrer">
+                                        作品公式サイトへ
+                                    </a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </article>
+                </div>
+            </section>
         </div>
     );
 };

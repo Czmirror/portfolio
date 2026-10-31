@@ -22,6 +22,9 @@
     --sci-fi-texture: url('../image/backgrounds/sci-fi-circuit.png');
     --panel-texture-opacity: 0.3;
     --contact-texture-opacity: 0.3;
+    /* 紹介枠の余白とラベルの文字間は、表示を見ながら調整する仮の値です。 */
+    --showcase-padding: 1.5rem;
+    --showcase-label-spacing: 0.08em;
 }
 
 .section {
@@ -740,6 +743,39 @@ body {
 
 .game-works-title {
     margin-top: 2rem;
+}
+
+.collaboration-card,
+.music-panel {
+    padding: var(--showcase-padding);
+    border: 1px solid var(--color-border-highlight);
+    border-radius: 3px;
+    background: linear-gradient(135deg, var(--color-accent-soft), transparent), var(--color-surface-inset);
+}
+
+.showcase-label {
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: var(--showcase-label-spacing);
+    margin-bottom: 0.75rem;
+}
+
+.music-panel .card-subtitle {
+    margin-top: 0;
+}
+
+.music-player {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 3px;
+}
+
+.collaboration-card .store-link:focus-visible,
+.music-panel .store-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
 }
 
 .contact-guide {

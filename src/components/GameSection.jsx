@@ -12,6 +12,9 @@ const GameSection = ({
                          demoLinks,
                          youtubeEmbed,
                          soundcloudEmbed,
+                         soundcloudTitle,
+                         soundcloudTrackUrl,
+                         musicNote,
                          imageSrc,
                          screenshots,
                          story,
@@ -139,20 +142,34 @@ const GameSection = ({
                             </div>
                         </div>
                     )}
-                    {/* SoundCloud プレイヤー埋め込み */}
-                    {soundcloudEmbed && (
+                    {musicNote && (
                         <div className="columns is-marginless">
                             <div className="column">
-                                <h4 className="title is-4 card-subtitle extra-margin">SoundCloudプレイヤー</h4>
-                                <LazyIframe
-                                    src={soundcloudEmbed}
-                                    width="100%"
-                                    height="450"
-                                    scrolling="no"
-                                    frameBorder="no"
-                                    allow="autoplay"
-                                    title={`${title} SoundCloudプレイヤー`}
-                                />
+                                <div className="music-panel">
+                                    <p className="showcase-label">ゲームと音楽</p>
+                                    <h4 className="title is-4 card-subtitle">BGMについて</h4>
+                                    <p className="about-content is-size-7 mb-4">{musicNote}</p>
+                                    {soundcloudEmbed && (
+                                        <>
+                                            <p className="has-text-weight-semibold mb-3">{soundcloudTitle}</p>
+                                            <iframe
+                                                className="music-player"
+                                                src={soundcloudEmbed}
+                                                width="100%"
+                                                height="166"
+                                                frameBorder="0"
+                                                loading="lazy"
+                                                allow="autoplay"
+                                                title={`${soundcloudTitle} — SoundCloud試聴プレイヤー`}
+                                            />
+                                            <p className="is-size-7 mt-3">
+                                                <a href={soundcloudTrackUrl} className="store-link" target="_blank" rel="noopener noreferrer">
+                                                    SoundCloudで聴く
+                                                </a>
+                                            </p>
+                                        </>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     )}
