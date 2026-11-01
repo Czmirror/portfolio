@@ -225,9 +225,9 @@ const Portfolio = () => {
             <section id="portfolio" className="section slide-in store-section">
                 <div className="container">
                     <h2 className="title store-title">制作実績</h2>
-                    <WorkDirectory webWorks={webWorks} games={games} collaboration={collaboration} />
+                    <WorkDirectory />
                     <div className="store-card">
-                        <h3 className="title is-4 card-title">Web制作物・ツール</h3>
+                        <h3 id="web-works" className="title is-4 card-title">Web制作物・ツール</h3>
                         <p className="about-content is-size-7">
                             個人制作として公開しているWebツールやブラウザ向けコンテンツです。
                         </p>
@@ -274,7 +274,7 @@ const Portfolio = () => {
                             ))}
                         </div>
                     </div>
-                    <h3 className="title store-title game-works-title">ゲーム制作実績</h3>
+                    <h3 id="game-works" className="title store-title game-works-title">ゲーム制作実績</h3>
                 </div>
             </section>
 
