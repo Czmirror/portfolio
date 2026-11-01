@@ -25,6 +25,10 @@
     /* 紹介枠の余白とラベルの文字間は、表示を見ながら調整する仮の値です。 */
     --showcase-padding: 1.5rem;
     --showcase-label-spacing: 0.08em;
+    /* 作品ガイドを実際の文量で確認するための仮の余白です。 */
+    --directory-padding: 1.25rem;
+    --directory-gap: 1rem;
+    --work-anchor-offset: 5rem;
 }
 
 .section {
@@ -743,6 +747,92 @@ body {
 
 .game-works-title {
     margin-top: 2rem;
+}
+
+.web-work-card[id],
+.portfolio[id],
+.music-panel[id],
+#collaboration {
+    scroll-margin-top: var(--work-anchor-offset);
+}
+
+.work-directory {
+    margin-bottom: 2rem;
+}
+
+.work-directory-heading {
+    margin-bottom: var(--directory-gap);
+}
+
+.work-directory-heading .title {
+    margin-bottom: 0.5rem;
+}
+
+.work-directory-heading > p,
+.work-directory-group > p {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+.work-directory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--directory-gap);
+    align-items: start;
+}
+
+.work-directory-group {
+    padding: var(--directory-padding);
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    background: linear-gradient(135deg, var(--color-accent-soft), transparent), var(--color-surface-inset);
+}
+
+.work-directory-group h4 {
+    color: var(--color-accent);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.work-directory-group ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: var(--directory-gap);
+}
+
+.work-directory-group a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    color: var(--color-text);
+    overflow-wrap: anywhere;
+}
+
+.work-directory-group a:hover {
+    color: var(--color-accent);
+    border-color: var(--color-border-highlight);
+    background: var(--color-accent-soft);
+}
+
+.work-directory-group a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.work-directory-arrow {
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .work-directory-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
 .collaboration-card,

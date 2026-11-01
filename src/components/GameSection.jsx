@@ -145,7 +145,7 @@ const GameSection = ({
                     {musicNote && (
                         <div className="columns is-marginless">
                             <div className="column">
-                                <div className="music-panel">
+                                <div id={`${sectionId}-music`} className="music-panel">
                                     <p className="showcase-label">ゲームと音楽</p>
                                     <h4 className="title is-4 card-subtitle">BGMについて</h4>
                                     <p className="about-content is-size-7 mb-4">{musicNote}</p>

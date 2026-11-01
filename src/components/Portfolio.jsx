@@ -1,7 +1,12 @@
 // src/index.jsから読み込まれ、相談案内と制作実績を静的データから表示します。
 import React, { useEffect, useRef } from 'react';
 import GameSection from './GameSection';
+import WorkDirectory from './WorkDirectory';
 import portfolioData from '../data/portfolioData.json';
+
+// ガイドと詳細欄で同じアンカーを使い、すでに公開したIDは維持します。
+const games = portfolioData.map(game => ({ ...game, sectionId: game.sectionId || `game-${game.id}` }));
+const collaboration = { title: '犯罪者隔離世界', sectionId: 'collaboration' };
 
 const consultationItems = [
     'LINEからイベント参加者を募集・管理したい',
@@ -220,6 +225,7 @@ const Portfolio = () => {
             <section id="portfolio" className="section slide-in store-section">
                 <div className="container">
                     <h2 className="title store-title">制作実績</h2>
+                    <WorkDirectory webWorks={webWorks} games={games} collaboration={collaboration} />
                     <div className="store-card">
                         <h3 className="title is-4 card-title">Web制作物・ツール</h3>
                         <p className="about-content is-size-7">
@@ -227,7 +233,7 @@ const Portfolio = () => {
                         </p>
                         <div className="web-work-list">
                             {webWorks.map((work) => (
-                                <article className="web-work-card" key={work.title} data-analytics-work={work.analyticsId}>
+                                <article id={`work-${work.analyticsId}`} className="web-work-card" key={work.title} data-analytics-work={work.analyticsId}>
                                     <div className="web-work-layout">
                                         <figure className="web-work-media">
                                             <img src={work.imageSrc} alt={work.imageAlt} loading="lazy" />
@@ -272,7 +278,7 @@ const Portfolio = () => {
                 </div>
             </section>
 
-            {portfolioData.map((game) => (
+            {games.map((game) => (
                 <GameSection
                     key={game.id}
                     analyticsId={`game-${game.id}`}
@@ -293,12 +299,12 @@ const Portfolio = () => {
                 />
             ))}
 
-            <section id="collaboration" className="section slide-in store-section">
+            <section id={collaboration.sectionId} className="section slide-in store-section">
                 <div className="container">
                     <h2 className="title store-title">コラボレーション</h2>
                     <article className="store-card collaboration-card">
                         <p className="showcase-label">共同制作への参加</p>
-                        <h3 className="title is-4 card-title">犯罪者隔離世界</h3>
+                        <h3 className="title is-4 card-title">{collaboration.title}</h3>
                         <p className="about-content is-size-7">
                             ミニゲームを含むアドベンチャーゲームに、実装担当として参加しました。
                         </p>
