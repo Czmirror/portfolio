@@ -75,7 +75,7 @@ npm run serve -- --host 127.0.0.1 --port 4173 --base /portfolio/
 
 - 経歴・スキル・連絡先: `index.html`
 - Web制作物・コラボレーションの紹介: `src/components/Portfolio.jsx`
-- 作品ガイドの表示: `src/components/WorkDirectory.jsx`。作品名と移動先は既存の掲載データから作ります。
+- 制作実績のカテゴリ案内: `src/components/WorkDirectory.jsx`。Webツール・ゲームへのページ内リンクを表示します。
 - ゲーム作品: `src/data/portfolioData.json`
 - 更新履歴: `src/data/whats_new.json` の先頭に、重複しないIDと日付を付けて追加
 
