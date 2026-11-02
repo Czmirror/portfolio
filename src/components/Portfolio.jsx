@@ -229,7 +229,7 @@ const Portfolio = () => {
                 <div className="container">
                     <header className="work-section-heading">
                         <h2 className="title store-title">制作実績</h2>
-                        <p>個人制作として公開しているWebツールやブラウザ向けコンテンツです。</p>
+                        <p>個人制作として公開しているWebツールやブラウザで遊べるゲームです。</p>
                     </header>
                     <WorkDirectory />
                     <div id="web-works" className="web-work-list" aria-label="Web制作物・ツール">
@@ -240,7 +240,7 @@ const Portfolio = () => {
                                         <img src={work.imageSrc} alt={work.imageAlt} loading="lazy" width="1280" height="720" />
                                     </figure>
                                     <div className="web-work-overview">
-                                        <p className="web-work-category">Webツール</p>
+                                        <p className="web-work-category">Web作品</p>
                                         <h3 className="web-work-title">{work.title}</h3>
                                         <p className="web-work-summary">{work.summary}</p>
                                         <p className="web-work-caption">{work.caption}</p>
