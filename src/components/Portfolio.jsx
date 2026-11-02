@@ -80,6 +80,7 @@ const webWorks = [
         imageSrc: './assets/image/portfolio/web/uinya.png',
         imageAlt: 'UINyaのUI素材エディタ画面',
         summary: '猫モチーフのゲームUI素材を作成できるSVGジェネレーターです。',
+        caption: 'ボタンやフレーム、ゲージを編集し、SVG・PNGで書き出せます。',
         overview: 'ゲーム制作で使うボタン、フレーム、ゲージ、テキストボックスなどを、猫モチーフで作れるツールです。',
         features: 'テンプレート選択、図形・テキスト追加、グループ化、前後関係の変更、SVG/PNG出力、保存・読み込みなどを実装しています。',
         notes: '猫耳フレーム、肉球ボタン、しっぽ型ゲージなど、ゲームUIとして使いやすいモチーフをテンプレート化しています。',
@@ -94,6 +95,7 @@ const webWorks = [
         imageSrc: './assets/image/portfolio/web/mimilab.png',
         imageAlt: 'MimiLabの音楽キー・BPM解析ページ',
         summary: '音声ファイルや動画URLからキー、スケール、BPMなどを解析する耳コピ補助アプリです。',
+        caption: '曲のキーやBPMを確認し、耳コピの準備に活用できます。',
         overview: '耳コピの前段階で知りたい曲のキー、スケール、BPM、ダイアトニックコードを確認するために作ったアプリです。',
         features: '音声入力、AI解析、キー・スケール・BPM・ダイアトニックコード表示、GitHub Pagesの紹介ページ、配布導線を整備しています。',
         notes: 'Essentia.jsやTonal.jsなど、音声解析と音楽理論の既存ライブラリを組み合わせて、耳コピに必要な情報を一画面にまとめています。',
@@ -109,6 +111,7 @@ const webWorks = [
         imageSrc: './assets/image/portfolio/web/pulse.png',
         imageAlt: 'PULSEのブラウザリズムゲーム画面',
         summary: 'Rust製ゲームエンジンBevyをWASMで動かした、ブラウザで遊べるリズムゲームです。',
+        caption: 'クリックやタップのタイミングを合わせる、30秒のリズムゲームです。',
         overview: '中央のリングに向かって縮むパルス波に合わせてクリックまたはタップする、30秒のシンプルなリズムゲームです。',
         features: 'Bevy 0.15をWASM向けにビルドし、GitHub ActionsとGitHub Pagesで公開。Web Audio API、初回操作時のAudioContext再開、音量設定の保存に対応しています。',
         notes: 'ブラウザのオートプレイ制限やWebGL2/WebGPU対応を考慮し、起動できない環境では理由が分かる表示へ切り替える構成にしています。',
@@ -224,55 +227,60 @@ const Portfolio = () => {
 
             <section id="portfolio" className="section slide-in store-section">
                 <div className="container">
-                    <h2 className="title store-title">制作実績</h2>
+                    <header className="work-section-heading">
+                        <h2 className="title store-title">制作実績</h2>
+                        <p>個人制作として公開しているWebツールやブラウザ向けコンテンツです。</p>
+                    </header>
                     <WorkDirectory />
-                    <div className="store-card">
-                        <h3 id="web-works" className="title is-4 card-title">Web制作物・ツール</h3>
-                        <p className="about-content is-size-7">
-                            個人制作として公開しているWebツールやブラウザ向けコンテンツです。
-                        </p>
-                        <div className="web-work-list">
-                            {webWorks.map((work) => (
-                                <article id={`work-${work.analyticsId}`} className="web-work-card" key={work.title} data-analytics-work={work.analyticsId}>
-                                    <div className="web-work-layout">
-                                        <figure className="web-work-media">
-                                            <img src={work.imageSrc} alt={work.imageAlt} loading="lazy" />
-                                        </figure>
-                                        <div className="web-work-overview">
-                                            <h4 className="title is-5 card-title">{work.title}</h4>
-                                            <p className="about-content is-size-7 web-work-summary">{work.summary}</p>
-                                        </div>
-                                    </div>
-                                    <dl className="case-format">
-                                        <div><dt>概要</dt><dd>{work.overview}</dd></div>
-                                        <div><dt>主な機能</dt><dd>{work.features}</dd></div>
-                                        <div><dt>工夫したこと</dt><dd>{work.notes}</dd></div>
-                                        <div>
-                                            <dt>使用技術</dt>
-                                            <dd>
-                                                <div className="tags">
-                                                    {work.technologies.map((technology) => (
-                                                        <span className="tag is-info" key={technology}>#{technology}</span>
-                                                    ))}
+                    <div id="web-works" className="web-work-list" aria-label="Web制作物・ツール">
+                        {webWorks.map((work) => (
+                            <article id={`work-${work.analyticsId}`} className="web-work-card" key={work.title} data-analytics-work={work.analyticsId}>
+                                <div className="web-work-layout">
+                                    <figure className="web-work-media">
+                                        <img src={work.imageSrc} alt={work.imageAlt} loading="lazy" width="1280" height="720" />
+                                    </figure>
+                                    <div className="web-work-overview">
+                                        <p className="web-work-category">Webツール</p>
+                                        <h3 className="web-work-title">{work.title}</h3>
+                                        <p className="web-work-summary">{work.summary}</p>
+                                        <p className="web-work-caption">{work.caption}</p>
+                                        <a href={work.links[0].url} className="work-primary-link" target="_blank" rel="noopener noreferrer">
+                                            {work.links[0].text}
+                                        </a>
+                                        <details className="web-work-details">
+                                            <summary>制作の詳細</summary>
+                                            <dl className="case-format">
+                                                <div><dt>概要</dt><dd>{work.overview}</dd></div>
+                                                <div><dt>主な機能</dt><dd>{work.features}</dd></div>
+                                                <div><dt>工夫したこと</dt><dd>{work.notes}</dd></div>
+                                                <div>
+                                                    <dt>使用技術</dt>
+                                                    <dd>
+                                                        <div className="tags">
+                                                            {work.technologies.map((technology) => (
+                                                                <span className="tag is-info" key={technology}>#{technology}</span>
+                                                            ))}
+                                                        </div>
+                                                    </dd>
                                                 </div>
-                                            </dd>
-                                        </div>
-                                        <div>
-                                            <dt>関連リンク</dt>
-                                            <dd>
-                                                <ul className="is-size-7">
-                                                    {work.links.map((link) => (
-                                                        <li key={link.url}>
-                                                            <a href={link.url} className="store-link" target="_blank" rel="noopener noreferrer">{link.text}</a>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </dd>
-                                        </div>
-                                    </dl>
-                                </article>
-                            ))}
-                        </div>
+                                                <div>
+                                                    <dt>関連リンク</dt>
+                                                    <dd>
+                                                        <ul>
+                                                            {work.links.map((link) => (
+                                                                <li key={link.url}>
+                                                                    <a href={link.url} className="store-link" target="_blank" rel="noopener noreferrer">{link.text}</a>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </dd>
+                                                </div>
+                                            </dl>
+                                        </details>
+                                    </div>
+                                </div>
+                            </article>
+                        ))}
                     </div>
                     <h3 id="game-works" className="title store-title game-works-title">ゲーム制作実績</h3>
                 </div>
