@@ -13,3 +13,5 @@
 2026-11-02、アプリ内ブラウザで実施。3作品のEnter/Space開閉、リンク先属性、両カテゴリのhash移動、390pxで詳細を開いた状態の横幅390px、途中リロード後のopacity=1・3作品表示を確認。図解は1536×1024pxの原寸画像が別タブで開くことを確認。console errorなし。
 
 証拠: `/private/tmp/editorial-desktop-final.png`、`/private/tmp/editorial-mobile.jpg`、`/private/tmp/strengths-mobile.jpg`、`/private/tmp/strengths-desktop-final.jpg`。作品リンク先サービス内部の操作は対象外。
+
+2026-11-02追記: 本人の希望で図解を撤去。FT5の原寸表示確認は旧版の記録。現仕様は図解・説明文・専用CSSの不在を確認する。

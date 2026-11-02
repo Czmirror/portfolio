@@ -94,16 +94,16 @@ const GameSection = ({
                                 {platform && (
                                     <>
                                         <h4 className="title is-4 card-subtitle extra-margin">対応プラットフォーム</h4>
-                                        <p className="about-content is-size-7" dangerouslySetInnerHTML={{ __html: platform }}></p>
+                                        <p className="about-content is-size-7 game-platform" dangerouslySetInnerHTML={{ __html: platform }}></p>
                                     </>
                                 )}
                                 {demoLinks && demoLinks.length > 0 && (
                                     <>
                                         <h4 className="title is-4 card-subtitle extra-margin">デモ・関連リンク</h4>
                                         <ul className="is-size-7">
-                                            {demoLinks.map((link) => (
+                                            {demoLinks.map((link, index) => (
                                                 <li key={link.url}>
-                                                    <a href={link.url} className="store-link" target="_blank" rel="noopener noreferrer">{link.text}</a>
+                                                    <a href={link.url} className={index === 0 ? "store-link game-play-link" : "store-link"} target="_blank" rel="noopener noreferrer">{index === 0 ? `無料で遊ぶ：${link.text}` : link.text}</a>
                                                 </li>
                                             ))}
                                         </ul>
