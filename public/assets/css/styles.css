@@ -1353,3 +1353,14 @@ body {
     outline: 2px solid var(--color-accent);
     outline-offset: 4px;
 }
+
+.contact-guide a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.contact-guide a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
