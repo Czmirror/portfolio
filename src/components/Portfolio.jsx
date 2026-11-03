@@ -6,7 +6,8 @@ import portfolioData from '../data/portfolioData.json';
 
 // ガイドと詳細欄で同じアンカーを使い、すでに公開したIDは維持します。
 const games = portfolioData.map(game => ({ ...game, sectionId: game.sectionId || `game-${game.id}` }));
-const collaboration = { title: '犯罪者隔離世界', sectionId: 'collaboration' };
+// 掲載許可を確認するまで、コラボレーション欄は描画しません。
+const collaboration = { visible: false, title: '犯罪者隔離世界', sectionId: 'collaboration' };
 
 const consultationItems = [
     'LINEからイベント参加者を募集・管理したい',
@@ -307,7 +308,7 @@ const Portfolio = () => {
                 />
             ))}
 
-            <section id={collaboration.sectionId} className="section slide-in store-section">
+            {collaboration.visible && <section id={collaboration.sectionId} className="section slide-in store-section">
                 <div className="container">
                     <h2 className="title store-title">コラボレーション</h2>
                     <article className="store-card collaboration-card">
@@ -332,7 +333,7 @@ const Portfolio = () => {
                         </dl>
                     </article>
                 </div>
-            </section>
+            </section>}
         </div>
     );
 };
