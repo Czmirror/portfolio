@@ -124,9 +124,9 @@
                     WebサイトやLINEを使った仕組みづくり、業務や連絡作業の整理もご相談ください。既存サービスの活用も含めて、現実的な進め方を提案します。
                 </p>
                 <div class="hero-actions">
-                    <a class="button is-info is-light" href="#consultation">相談できること</a>
-                    <a class="button is-link is-light" href="#portfolio">制作実績</a>
-                    <a class="button is-primary is-light" href="#contact">お問い合わせ</a>
+                    <a class="button hero-primary-action" href="#portfolio">制作実績を見る</a>
+                    <a class="hero-secondary-action" href="#consultation">Webの相談</a>
+                    <a class="hero-secondary-action" href="#contact">お問い合わせ</a>
                 </div>
             </div>
         </div>
@@ -136,29 +136,53 @@
 <div id="whats_new"></div>
 
 <section id="about" class="section section-below-hero slide-in">
-    <div class="container">
-        <h2 class="title has-text-centered">自己紹介</h2>
-
-        <!-- プロフィール中央揃え -->
-        <div class="has-text-centered mb-6 profile-header slide-in">
-            <figure class="image is-128x128 is-inline-block mb-4">
-                <img class="profile-icon" src="./assets/image/icon_cz_mirror.png" alt="Profile Icon" loading="lazy">
-            </figure>
-            <p class="title is-5 mb-1"><strong>Cz_mirror / Kazushige Mori（森 一茂）</strong></p>
-            <p class="subtitle is-6">
-                <span class="has-text-weight-semibold has-text-info">職業 / Profession：</span>
-                Web系エンジニア / Web Engineer、個人ゲーム開発 / Game Developer
-            </p>
-            <p class="profile-summary">
-                相談内容を整理し、設計・実装・公開まで形にすることを大切にしています。Webの業務経験と個人ゲーム制作で培った試作・改善の経験を活かし、小さく始められる仕組みづくりから対応します。
-            </p>
+    <div class="container profile-layout">
+        <div class="profile-identity">
+            <img class="profile-icon" src="./assets/image/icon_cz_mirror.png" alt="" width="192" height="192" loading="lazy">
+            <p class="profile-name">Cz_mirror / 森 一茂</p>
+            <p>Webエンジニア・個人ゲーム開発</p>
+            <nav class="profile-links" aria-label="主なプロフィールリンク">
+                <a href="https://github.com/Czmirror" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://unityroom.com/users/1xeulc2hnzogrj5483pm" target="_blank" rel="noopener noreferrer">Unityroom</a>
+                <a href="https://soundcloud.com/kazushige-mori" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            </nav>
+            <details class="profile-disclosure">
+                <summary>その他のリンク</summary>
+                <div class="profile-extra-links">
+                    <a href="https://x.com/Cz_mirror" target="_blank" rel="noopener noreferrer">X</a>
+                    <a href="https://www.wantedly.com/id/Cz_mirror" target="_blank" rel="noopener noreferrer">Wantedly</a>
+                    <a href="https://www.facebook.com/kazushige.mori" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="https://zenn.dev/cz_mirror" target="_blank" rel="noopener noreferrer">Zenn</a>
+                    <a href="https://note.com/cz_mirror" target="_blank" rel="noopener noreferrer">note</a>
+                    <a href="https://cz-mirror.hatenablog.com" target="_blank" rel="noopener noreferrer">はてなブログ</a>
+                </div>
+            </details>
         </div>
 
-        <!-- 下層コンテンツ：経歴・リンク・スキル -->
-        <div class="columns is-multiline">
-            <!-- 経歴 -->
-            <div class="column is-one-third career slide-in">
-                <h3 class="title is-4">自己紹介・経歴</h3>
+        <div class="profile-main">
+            <header>
+                <p class="profile-eyebrow" aria-hidden="true">ABOUT</p>
+                <h2 class="title">自己紹介</h2>
+                <p class="profile-summary">Webサービスの設計・実装から運用・改善まで携わってきました。個人ではWebツールやゲームを制作し、試作から公開まで取り組んでいます。</p>
+            </header>
+            <dl class="profile-experience">
+                <div>
+                    <dt>会員基盤・認証 <small>PHP / Laravel</small></dt>
+                    <dd>会員サービスや認証・権限管理の設計と実装を担当し、公開後の運用と改善にも携わりました。</dd>
+                </div>
+                <div>
+                    <dt>移行・自動化 <small>PostgreSQL / Ansible / Packer</small></dt>
+                    <dd>OracleからPostgreSQLへの移行に伴うPHP改修や、Amazon Linuxの移行に伴う環境構築を経験しました。</dd>
+                </div>
+                <div>
+                    <dt>個人制作 <small>Webツール・ゲーム</small></dt>
+                    <dd>Webツールやゲームを制作し、ブラウザやSteamで公開しています。</dd>
+                </div>
+            </dl>
+
+            <details class="profile-disclosure">
+                <summary><span class="profile-expand">詳しい経歴を見る</span><span class="profile-collapse">経歴を閉じる</span></summary>
+                <div class="career profile-detail-body">
                 <p class="has-text-weight-semibold">Web開発経験</p>
                 <ul class="mb-4">
                     <li>PHP / Laravelを中心に、会員基盤・認証・権限管理、管理画面、バッチの設計・実装と、サービスの長期運用・改善を経験しています。</li>
@@ -173,103 +197,32 @@
                     <li>UI、アニメーション、スクリプトの設計・実装に加え、一部の自作ゲームではBGM制作にも取り組んでいます。</li>
                     <li>Captulion・TurboSobaの自作BGMをSoundCloudで公開しています。TypeGunnerではSunoを活用して楽曲を制作しています。</li>
                 </ul>
-            </div>
-
-            <!-- リンク -->
-            <div class="column is-one-third slide-in">
-                <h3 class="title is-4">リンク</h3>
-                <div class="tags are-medium is-flex is-flex-wrap-wrap">
-                    <a href="https://unityroom.com/users/1xeulc2hnzogrj5483pm" class="tag is-link is-light is-size-7" target="_blank" rel="noopener noreferrer">Unityroom</a>
-                    <a href="https://github.com/Czmirror" class="tag is-link is-light is-size-7" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://soundcloud.com/kazushige-mori" class="tag is-link is-light is-size-7" target="_blank" rel="noopener noreferrer">SoundCloud</a>
-                    <a href="https://x.com/Cz_mirror" class="tag is-link is-light is-size-7" target="_blank" rel="noopener noreferrer">X</a>
-                    <a href="https://www.wantedly.com/id/Cz_mirror" class="tag is-link is-light is-size-7" target="_blank" rel="noopener noreferrer">Wantedly</a>
-                    <a href="https://www.facebook.com/kazushige.mori" class="tag is-link is-light is-size-7" target="_blank" rel="noopener noreferrer">Facebook</a>
-                    <a href="https://zenn.dev/cz_mirror" class="tag is-link is-light is-size-7" target="_blank" rel="noopener noreferrer">Zenn</a>
-                    <a href="https://note.com/cz_mirror" class="tag is-link is-light is-size-7" target="_blank" rel="noopener noreferrer">note</a>
-                    <a href="https://cz-mirror.hatenablog.com" class="tag is-link is-light is-size-7" target="_blank" rel="noopener noreferrer">はてなブログ</a>
                 </div>
-            </div>
-
-            <!-- スキル -->
-            <div class="column is-one-third slide-in">
-                <h3 class="title is-4">スキル</h3>
-                <p class="is-size-7 mb-3">業務経験・個人制作・学習で使用している技術や、経験のある開発工程です。</p>
-
-                <p class="has-text-weight-semibold">Web開発</p>
-                <div class="tags">
-                    <span class="tag is-info">#PHP</span>
-                    <span class="tag is-info">#Laravel</span>
-                    <span class="tag is-info">#MySQL</span>
-                    <span class="tag is-info">#MariaDB</span>
-                    <span class="tag is-info">#Mroonga</span>
-                    <span class="tag is-info">#Oracle</span>
-                    <span class="tag is-info">#Keycloak</span>
-                    <span class="tag is-info">#認証・SSO</span>
-                    <span class="tag is-info">#権限管理</span>
-                    <span class="tag is-info">#Docker</span>
-                    <span class="tag is-info">#TypeScript</span>
-                    <span class="tag is-info">#Node.js</span>
-                    <span class="tag is-info">#Prisma</span>
-                    <span class="tag is-info">#PostgreSQL</span>
-                    <span class="tag is-info">#Git</span>
-                    <span class="tag is-info">#Linux</span>
-                    <span class="tag is-primary">#HTML</span>
-                    <span class="tag is-primary">#CSS</span>
-                    <span class="tag is-primary">#JavaScript</span>
-                    <span class="tag is-primary">#React</span>
-                    <span class="tag is-primary">#Next.js</span>
-                    <span class="tag is-primary">#Electron</span>
-                    <span class="tag is-primary">#SVG</span>
-                    <span class="tag is-primary">#Canvas API</span>
-                    <span class="tag is-primary">#Web Audio API</span>
+            </details>
+            <details class="profile-disclosure">
+                <summary><span class="profile-expand">スキル一覧を見る</span><span class="profile-collapse">スキル一覧を閉じる</span></summary>
+                <div class="profile-detail-body">
+                    <p class="profile-skill-note">業務・個人制作・学習で使った技術やツールと、経験のある開発工程です。</p>
+                    <h3>業務で使った技術</h3>
+                    <dl class="profile-skill-list">
+                        <div><dt>Web・認証</dt><dd>PHP / Laravel / Keycloak / 認証・SSO / 権限管理</dd></div>
+                        <div><dt>DB・検索</dt><dd>Oracle / PostgreSQL / MariaDB / Mroonga</dd></div>
+                        <div><dt>移行・運用</dt><dd>Amazon Linux / Ansible（Playbook作成・修正） / Packer / CloudWatch Logs</dd></div>
+                        <div><dt>開発工程</dt><dd>要件定義 / 設計 / 実装 / 検証 / DB設計 / DB移行 / 運用・改善 / スクラム開発</dd></div>
+                    </dl>
+                    <h3>個人制作で使った技術</h3>
+                    <dl class="profile-skill-list">
+                        <div><dt>Webツール</dt><dd>TypeScript / React / Next.js / Node.js / Prisma / PostgreSQL</dd></div>
+                        <div><dt>ゲーム</dt><dd>Unity / C# / Godot Engine</dd></div>
+                        <div><dt>ゲーム素材・音楽</dt><dd>Blender / VRoid / Aseprite / Affinity / DaVinci Resolve / DTM・ゲームBGM制作 / Suno</dd></div>
+                    </dl>
+                    <h3>その他の技術・ツール</h3>
+                    <dl class="profile-skill-list">
+                        <div><dt>Web・実行環境</dt><dd>HTML / CSS / JavaScript / MySQL / Docker / Linux / Electron / SVG / Canvas API / Web Audio API / Rust / Bevy / WebAssembly</dd></div>
+                        <div><dt>開発ツール</dt><dd>Git / VSCode / JetBrains / GitHub Actions / GitHub Pages / Codex / Claude Code / Slack / Discord</dd></div>
+                    </dl>
                 </div>
-
-                <p class="has-text-weight-semibold mt-3">ゲーム制作</p>
-                <div class="tags">
-                    <span class="tag is-success">#Unity</span>
-                    <span class="tag is-success">#C#</span>
-                    <span class="tag is-success">#Godot Engine</span>
-                    <span class="tag is-success">#Rust</span>
-                    <span class="tag is-success">#Bevy</span>
-                    <span class="tag is-success">#WebAssembly</span>
-                    <span class="tag is-success">#Blender</span>
-                    <span class="tag is-success">#VRoid</span>
-                    <span class="tag is-success">#Aseprite</span>
-                    <span class="tag is-success">#Affinity</span>
-                    <span class="tag is-warning">#DaVinci Resolve</span>
-                    <span class="tag is-warning">#DTM・ゲームBGM制作</span>
-                    <span class="tag is-warning">#Suno</span>
-                </div>
-
-                <p class="has-text-weight-semibold mt-3">ツール・環境</p>
-                <div class="tags">
-                    <span class="tag is-light">#VSCode</span>
-                    <span class="tag is-light">#JetBrains</span>
-                    <span class="tag is-light">#GitHub Actions</span>
-                    <span class="tag is-light">#GitHub Pages</span>
-                    <span class="tag is-light">#Ansible（Playbook作成・修正）</span>
-                    <span class="tag is-light">#Packer</span>
-                    <span class="tag is-light">#Amazon Linux</span>
-                    <span class="tag is-light">#CloudWatch Logs</span>
-                    <span class="tag is-light">#Codex</span>
-                    <span class="tag is-light">#Claude Code</span>
-                    <span class="tag is-dark">#Slack</span>
-                    <span class="tag is-dark">#Discord</span>
-                </div>
-
-                <p class="has-text-weight-semibold mt-3">開発工程</p>
-                <div class="tags">
-                    <span class="tag is-info">#要件定義</span>
-                    <span class="tag is-info">#設計</span>
-                    <span class="tag is-info">#実装</span>
-                    <span class="tag is-info">#検証</span>
-                    <span class="tag is-info">#DB設計</span>
-                    <span class="tag is-info">#DB移行</span>
-                    <span class="tag is-info">#運用・改善</span>
-                    <span class="tag is-info">#スクラム開発</span>
-                </div>
-            </div>
+            </details>
         </div>
     </div>
 </section>
@@ -313,7 +266,7 @@
         </p>
     </div>
 </footer>
-<script src="./assets/js/animations.js"></script>
+<script src="./assets/js/animations.js?v=2"></script>
 <script type="module" src="./src/index.js"></script>
 </body>
 </html>

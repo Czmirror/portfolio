@@ -30,20 +30,78 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('pageshow', checkSlideIn);
     checkSlideIn(); // 初期表示時にもチェックを行う
 
-    document.querySelectorAll('.navbar a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const target = document.querySelector(this.getAttribute('href'));
+    let navigationFrame = null;
+
+    function stopNavigationScroll() {
+        if (navigationFrame !== null) {
+            window.cancelAnimationFrame(navigationFrame);
+            navigationFrame = null;
+        }
+    }
+
+    function scrollToSection(target) {
+        const start = window.scrollY;
+        const margin = parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const destination = Math.max(0, Math.min(maxScroll, start + target.getBoundingClientRect().top - margin));
+        const distance = destination - start;
+        const duration = Math.min(1000, Math.max(700, Math.abs(distance) * 0.18));
+        const startTime = window.performance.now();
+
+        function step(now) {
+            const progress = Math.max(0, Math.min(1, (now - startTime) / duration));
+            const eased = progress * progress * (3 - 2 * progress);
+            window.scrollTo({ top: start + distance * eased, behavior: 'instant' });
+
+            if (progress < 1) {
+                navigationFrame = window.requestAnimationFrame(step);
+                return;
+            }
+
+            navigationFrame = null;
+            if (!target.hasAttribute('tabindex')) {
+                target.setAttribute('tabindex', '-1');
+            }
+            target.focus({ preventScroll: true });
+        }
+
+        navigationFrame = window.requestAnimationFrame(step);
+    }
+
+    // 読み手の操作が入ったら、進行中のナビゲーションスクロールを止めます。
+    for (const eventName of ['wheel', 'touchstart', 'keydown', 'popstate']) {
+        window.addEventListener(eventName, stopNavigationScroll, { passive: true });
+    }
+
+    document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', event => {
+            if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+                return;
+            }
+            const hash = anchor.getAttribute('href');
+            const target = document.getElementById(hash.slice(1));
             if (!target) {
                 return;
             }
 
-            e.preventDefault();
+            stopNavigationScroll();
             target.classList.add('visible');
             target.querySelectorAll('.slide-in').forEach(element => element.classList.add('visible'));
 
-            target.scrollIntoView({
-                behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            navbarBurgers.forEach(burger => {
+                if (burger.getAttribute('aria-expanded') === 'true') {
+                    burger.click();
+                }
             });
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                return;
+            }
+            event.preventDefault();
+            if (window.location.hash !== hash) {
+                window.history.pushState(null, '', hash);
+            }
+            scrollToSection(target);
         });
     });
 

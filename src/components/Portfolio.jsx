@@ -6,47 +6,25 @@ import portfolioData from '../data/portfolioData.json';
 
 // ガイドと詳細欄で同じアンカーを使い、すでに公開したIDは維持します。
 const games = portfolioData.map(game => ({ ...game, sectionId: game.sectionId || `game-${game.id}` }));
+const featuredGameIds = [1, 2, 7];
+const featuredGames = featuredGameIds.map(id => games.find(game => game.id === id));
+const otherGames = games.filter(game => !featuredGameIds.includes(game.id));
 // 掲載許可を確認するまで、コラボレーション欄は描画しません。
 const collaboration = { visible: false, title: '犯罪者隔離世界', sectionId: 'collaboration' };
 
 const consultationItems = [
-    'LINEからイベント参加者を募集・管理したい',
-    '紙やExcelで行っている集計を簡単にしたい',
-    '毎回手作業で送っている案内を減らしたい',
-    '申込フォームや小規模なWebページを用意したい',
-    '既存サービスで解決できるか相談したい',
-    '作りたいものはあるが、何から決めればよいか分からない',
+    { title: 'フォーム・小規模サイト', description: '申込フォームや、小規模なWebサイトを用意したい。' },
+    { title: 'LINEでの連絡・受付', description: 'LINEで参加者を募集したり、案内を送りやすくしたい。' },
+    { title: '集計・手作業の整理', description: '紙やExcelで行っている集計を簡単にしたい。' },
 ];
 
 const supportFlow = [
-    {
-        title: '初回相談',
-        description: '困っていること、実現したいこと、利用者、希望時期を確認します。',
-    },
-    {
-        title: '方法の整理',
-        description: '既存サービスで解決できるか、専用の制作が必要かを整理します。',
-    },
-    {
-        title: '対応範囲と金額の確認',
-        description: '実作業へ進む前に、作るもの、対応範囲、概算金額を提示します。',
-    },
-    {
-        title: '制作・設定',
-        description: '合意した範囲に沿って、制作または設定を進めます。',
-    },
-    {
-        title: '確認・引き渡し',
-        description: '動作を確認し、必要な説明とともに引き渡します。',
-    },
+    { title: '相談する', description: '困っていることや実現したいことをお聞かせください。' },
+    { title: '方法・費用を確認', description: '進め方、対応範囲と概算費用をご案内します。' },
+    { title: '制作・引き渡し', description: '合意した範囲で制作・設定し、動作を確認してお渡しします。' },
 ];
 
 const priceGuides = [
-    {
-        item: '初回相談',
-        price: '無料・30分程度',
-        scope: '困りごとの確認と実現方法の整理',
-    },
     {
         item: '調査・提案',
         price: '5,000円〜',
@@ -55,11 +33,13 @@ const priceGuides = [
     {
         item: '小規模な設定・修正',
         price: '10,000円〜',
+        featured: true,
         scope: 'フォーム設定、軽微なページ修正、既存サービスの設定',
     },
     {
         item: '試作品の制作',
         price: '50,000円〜',
+        featured: true,
         scope: '動作確認を目的とした小規模なWeb試作',
     },
     {
@@ -155,74 +135,86 @@ const Portfolio = () => {
 
     return (
         <div ref={portfolioRef}>
-            <section id="consultation" className="section slide-in store-section service-section">
-                <div className="container">
-                    <h2 className="title store-title">Webについて相談できること</h2>
-                    <div className="store-card service-card">
-                        <p className="service-lead">
-                            WebサイトやLINEを使った連絡の仕組み、フォーム、集計、手作業の整理など、身近な困りごとから相談できます。
-                        </p>
-                        <div className="columns is-multiline">
-                            {consultationItems.map((item) => (
-                                <div className="column is-half" key={item}>
-                                    <div className="support-item">{item}</div>
-                                </div>
-                            ))}
+            <section id="consultation" className="section slide-in store-section">
+                <div className="container consultation-layout">
+                    <h2 className="title consultation-title">Webのご相談</h2>
+                    <p>Webまわりの小さな困りごとから、制作・改善までご相談いただけます。</p>
+                    <div className="consultation-columns">
+                        <div>
+                            <h3>相談例</h3>
+                            <dl className="consultation-examples">
+                                {consultationItems.map(({ title, description }) => (
+                                    <div key={title}>
+                                        <dt>{title}</dt>
+                                        <dd>{description}</dd>
+                                    </div>
+                                ))}
+                            </dl>
                         </div>
-                        <p className="service-note">
-                            ご相談内容を伺ったうえで、既存サービスで解決できる場合は、その方法も含めて提案します。必ず専用システムの開発を勧めるものではありません。
-                        </p>
+                        <div id="support-flow">
+                            <h3>ご相談の流れ</h3>
+                            <ol className="consultation-steps">
+                                {supportFlow.map(({ title, description }, index) => (
+                                    <li key={title}>
+                                        <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                                        <div>
+                                            <h4>{title}</h4>
+                                            <p>{description}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
                     </div>
-                </div>
-            </section>
-
-            <section id="support-flow" className="section slide-in store-section">
-                <div className="container">
-                    <h2 className="title store-title">相談から対応までの流れ</h2>
-                    <div className="flow-list">
-                        {supportFlow.map((step, index) => (
-                            <article className="flow-item" key={step.title}>
-                                <div className="flow-number">{index + 1}</div>
-                                <div>
-                                    <h3 className="title is-5 card-title">{step.title}</h3>
-                                    <p className="about-content is-size-7">{step.description}</p>
-                                </div>
-                            </article>
-                        ))}
+                    <div className="consultation-footer">
+                        <div>
+                            <p>既存サービスの活用も含めて提案します。</p>
+                            <p className="consultation-scope">継続保守・追加修正・緊急対応は別途ご相談となります。</p>
+                        </div>
                     </div>
-                    <p className="service-note mt-4">
-                        継続的な保守、追加修正、緊急対応は自動的には含まれません。必要な場合は、対応範囲と作業上限を確認したうえで別途ご相談となります。
-                    </p>
                 </div>
             </section>
 
             <section id="price-guide" className="section slide-in store-section">
-                <div className="container">
-                    <h2 className="title store-title">料金の目安</h2>
-                    <div className="table-scroll-hint">横にスクロールして確認できます</div>
-                    <div className="price-table-wrap" tabIndex="0" aria-label="料金の目安表">
-                        <table className="table price-table is-fullwidth">
-                            <thead>
-                            <tr>
-                                <th>内容</th>
-                                <th>料金の目安</th>
-                                <th>対応範囲</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {priceGuides.map((guide) => (
-                                <tr key={guide.item}>
-                                    <td>{guide.item}</td>
-                                    <td className="price-cell">{guide.price}</td>
-                                    <td>{guide.scope}</td>
-                                </tr>
-                            ))}
-                            </tbody>
-                        </table>
+                <div className="container pricing-layout">
+                    <div className="pricing-columns">
+                        <header className="pricing-intro">
+                            <h2 className="title">料金の目安</h2>
+                            <p className="pricing-free">初回相談は無料</p>
+                            <p>30分程度</p>
+                        </header>
+                        <div>
+                            <h3 className="pricing-examples-title">費用の例</h3>
+                            <dl className="pricing-examples">
+                                {priceGuides.filter((guide) => guide.featured).map(({ item, price }) => (
+                                    <div key={item}>
+                                        <dt>{item}</dt>
+                                        <dd>{price}</dd>
+                                    </div>
+                                ))}
+                            </dl>
+                            <p>ご依頼の内容に応じてお見積もりします。</p>
+                            <details className="pricing-details">
+                                <summary>料金の詳細を見る</summary>
+                                <dl className="pricing-full-list">
+                                    {priceGuides.map(({ item, price, scope }) => (
+                                        <div key={item}>
+                                            <dt>{item}</dt>
+                                            <dd className="pricing-amount">{price}</dd>
+                                            <dd className="pricing-scope">{scope}</dd>
+                                        </div>
+                                    ))}
+                                </dl>
+                                <p className="pricing-conditions">
+                                    サーバー、ドメイン、外部サービスなどの利用料は含みません。仕様追加や納品後の修正、継続的な運用対応は別途ご相談となります。即日・緊急対応は原則として行っていません。
+                                </p>
+                            </details>
+                        </div>
                     </div>
-                    <p className="service-note">
-                        表示料金は目安です。作業内容を確認したうえで、対応範囲と金額をご案内します。サーバー、ドメイン、外部サービスなどの利用料は含みません。仕様追加や納品後の修正、継続的な運用対応は別途ご相談となります。即日・緊急対応は原則として行っていません。
-                    </p>
+                    <div className="consultation-footer">
+                        <p>内容と費用に合意してから制作に進みます。</p>
+                        <a className="consultation-contact" href="#contact">お問い合わせ</a>
+                    </div>
                 </div>
             </section>
 
@@ -284,29 +276,22 @@ const Portfolio = () => {
                         ))}
                     </div>
                     <h3 id="game-works" className="title store-title game-works-title">ゲーム制作実績</h3>
+                    <p className="featured-games-label">代表作</p>
                 </div>
             </section>
 
-            {games.map((game) => (
-                <GameSection
-                    key={game.id}
-                    analyticsId={`game-${game.id}`}
-                    sectionId={game.sectionId}
-                    title={game.title}
-                    about={game.about}
-                    platform={game.platform}
-                    demoLinks={game.demoLinks}
-                    youtubeEmbed={game.youtubeEmbed}
-                    soundcloudEmbed={game.soundcloudEmbed}
-                    soundcloudTitle={game.soundcloudTitle}
-                    soundcloudTrackUrl={game.soundcloudTrackUrl}
-                    musicNote={game.musicNote}
-                    imageSrc={game.imageSrc}
-                    screenshots={game.screenshots}
-                    story={game.story}
-                    characters={game.characters}
-                />
+            {featuredGames.map(game => (
+                <GameSection key={game.id} {...game} analyticsId={`game-${game.id}`} />
             ))}
+
+            <section className="section other-games" aria-labelledby="other-games-title">
+                <div className="container">
+                    <h3 id="other-games-title" className="title">その他のゲーム作品</h3>
+                    {otherGames.map(game => (
+                        <GameSection key={game.id} {...game} analyticsId={`game-${game.id}`} compact />
+                    ))}
+                </div>
+            </section>
 
             {collaboration.visible && <section id={collaboration.sectionId} className="section slide-in store-section">
                 <div className="container">
