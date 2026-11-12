@@ -10,6 +10,7 @@ const GameSection = ({
                          about,
                          platform,
                          demoLinks,
+                         detailUrl,
                          youtubeEmbed,
                          soundcloudEmbed,
                          soundcloudTitle,
@@ -107,6 +108,9 @@ const GameSection = ({
                                             <a href={link.url} className={index === 0 ? "store-link game-play-link" : "store-link"} target="_blank" rel="noopener noreferrer">{index === 0 ? `無料で遊ぶ：${link.text}` : link.text}</a>
                                         </li>
                                     ))}
+                                    {detailUrl && (
+                                        <li><a href={detailUrl} className="store-link">{title}の作品紹介ページ</a></li>
+                                    )}
                                 </ul>
                             </>
                         )}

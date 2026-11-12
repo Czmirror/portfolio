@@ -37,6 +37,7 @@
     {
         "id": 2,
         "title": "TypeGunner",
+        "detailUrl": "./games/typegunner/",
         "about": "90年代頃のベルトアクションゲームのような雰囲気をもった感じを目指して、Godot Engineで制作したタイピングゲームです。<br>悪の組織と戦うストーリーモードの他に、タイピング早撃ちモードや、ブラインドタッチが苦手な方向けの練習モードも用意しています。<br>Web上で無料で遊べますので、よかったらプレイしていただけると嬉しいです。",
         "demoLinks": [
             { "text": "TypeGunner by unityroom", "url": "https://unityroom.com/games/typegunner" }
