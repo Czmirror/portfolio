@@ -38,6 +38,7 @@ const GameSection = ({
                     <div className="main-media-container">
                         {currentMedia.type === "video" ? (
                             <LazyVideo
+                                key={currentMedia.src}
                                 src={currentMedia.src}
                                 controls
                                 disablePictureInPicture
@@ -45,6 +46,7 @@ const GameSection = ({
                             />
                         ) : (
                             <LazyImage
+                                key={currentMedia.src}
                                 src={currentMedia.src}
                                 alt={`${title}のメイン画像`}
                                 className="main-media"

@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
 export const useLazyLoad = (options = {}) => {
-    const [isLoaded, setIsLoaded] = useState(false);
     const [isIntersecting, setIsIntersecting] = useState(false);
     const elementRef = useRef(null);
 
@@ -10,6 +9,11 @@ export const useLazyLoad = (options = {}) => {
     useEffect(() => {
         const element = elementRef.current;
         if (!element) return;
+
+        if (typeof IntersectionObserver !== 'function') {
+            setIsIntersecting(true);
+            return;
+        }
 
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -28,28 +32,27 @@ export const useLazyLoad = (options = {}) => {
         };
     }, [threshold, rootMargin]);
 
-    return { elementRef, isIntersecting, isLoaded, setIsLoaded };
+    return { elementRef, isIntersecting };
 };
 
 export const LazyImage = ({ src, alt, className, ...props }) => {
-    const { elementRef, isIntersecting, isLoaded, setIsLoaded } = useLazyLoad();
-
-    const handleLoad = () => {
-        setIsLoaded(true);
-    };
+    const { elementRef, isIntersecting } = useLazyLoad();
+    const [status, setStatus] = useState('loading');
 
     return (
         <div ref={elementRef} className={`lazy-image-container ${className || ''}`}>
-            {isIntersecting && (
+            {status === 'error' && <p className="is-size-7" role="status">画像を読み込めませんでした。</p>}
+            {isIntersecting && status !== 'error' && (
                 <img
                     src={src}
                     alt={alt}
-                    className={`lazy-image ${isLoaded ? 'loaded' : 'loading'}`}
-                    onLoad={handleLoad}
+                    className={`lazy-image ${status === 'loaded' ? 'loaded' : 'loading'}`}
+                    onLoad={() => setStatus('loaded')}
+                    onError={() => setStatus('error')}
                     {...props}
                 />
             )}
-            {!isLoaded && isIntersecting && (
+            {status === 'loading' && isIntersecting && (
                 <div className="lazy-placeholder">
                     <div className="loading-spinner"></div>
                 </div>
@@ -59,25 +62,24 @@ export const LazyImage = ({ src, alt, className, ...props }) => {
 };
 
 export const LazyVideo = ({ src, className, ...props }) => {
-    const { elementRef, isIntersecting, isLoaded, setIsLoaded } = useLazyLoad();
-
-    const handleLoadedData = () => {
-        setIsLoaded(true);
-    };
+    const { elementRef, isIntersecting } = useLazyLoad();
+    const [status, setStatus] = useState('loading');
 
     return (
         <div ref={elementRef} className={`lazy-video-container ${className || ''}`}>
-            {isIntersecting && (
+            {status === 'error' && <p className="is-size-7" role="status">動画を読み込めませんでした。</p>}
+            {isIntersecting && status !== 'error' && (
                 <video
-                    className={`lazy-video ${isLoaded ? 'loaded' : 'loading'}`}
-                    onLoadedData={handleLoadedData}
+                    className={`lazy-video ${status === 'loaded' ? 'loaded' : 'loading'}`}
+                    onLoadedMetadata={() => setStatus('loaded')}
+                    onError={() => setStatus('error')}
                     {...props}
+                    src={src}
                 >
-                    <source src={src} type="video/mp4" />
                     お使いのブラウザでは動画が再生できません。
                 </video>
             )}
-            {!isLoaded && isIntersecting && (
+            {status === 'loading' && isIntersecting && (
                 <div className="lazy-placeholder">
                     <div className="loading-spinner"></div>
                 </div>
